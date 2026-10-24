@@ -1,0 +1,160 @@
+{
+ "dataset": "sroie",
+ "images": 347,
+ "scored": 347,
+ "failed_calls": 0,
+ "fields": {
+  "company": {
+   "present": 347,
+   "accuracy": 0.023,
+   "wrong": 339,
+   "missed_as_null": 0,
+   "mean_similarity": 0.601,
+   "absent": 0,
+   "null_when_absent": null
+  },
+  "date": {
+   "present": 347,
+   "accuracy": 0.942,
+   "wrong": 20,
+   "missed_as_null": 0,
+   "mean_similarity": null,
+   "absent": 0,
+   "null_when_absent": null
+  },
+  "address": {
+   "present": 347,
+   "accuracy": 0.0,
+   "wrong": 325,
+   "missed_as_null": 22,
+   "mean_similarity": 0.393,
+   "absent": 0,
+   "null_when_absent": null
+  },
+  "total": {
+   "present": 347,
+   "accuracy": 0.931,
+   "wrong": 24,
+   "missed_as_null": 0,
+   "mean_similarity": null,
+   "absent": 0,
+   "null_when_absent": null
+  }
+ },
+ "calibration": [
+  {
+   "confidence": "0.00-0.50",
+   "answers": 344,
+   "share": 0.252,
+   "accuracy": 0.055
+  },
+  {
+   "confidence": "0.50-0.90",
+   "answers": 498,
+   "share": 0.365,
+   "accuracy": 0.275
+  },
+  {
+   "confidence": "0.90-0.99",
+   "answers": 201,
+   "share": 0.147,
+   "accuracy": 0.925
+  },
+  {
+   "confidence": "0.99-1.00",
+   "answers": 323,
+   "share": 0.236,
+   "accuracy": 0.978
+  }
+ ],
+ "overall_accuracy": 0.482,
+ "latency_ms": {
+  "median": 678,
+  "p90": 1096
+ },
+ "input_tokens": 1178308,
+ "mean_image_tokens": 950,
+ "cost_usd": 0.1178,
+ "examples_of_errors": {
+  "company": [
+   {
+    "idx": 0,
+    "truth": "OJC MARKETING SDN BHD",
+    "got": "OJC MarketingETING SDNH",
+    "confidence": 0.463
+   },
+   {
+    "idx": 1,
+    "truth": "OJC MARKETING SDN BHD",
+    "got": "tanJCAYY SD SDHD",
+    "confidence": 0.367
+   },
+   {
+    "idx": 2,
+    "truth": "PERNIAGAAN ZHENG HUI",
+    "got": "PERNII Z H HUI",
+    "confidence": 0.501
+   }
+  ],
+  "date": [
+   {
+    "idx": 2,
+    "truth": "09/02/2018",
+    "got": "2018-03-09",
+    "confidence": 0.467
+   },
+   {
+    "idx": 24,
+    "truth": "03 MAR 19",
+    "got": "2018-03-18",
+    "confidence": 0.734
+   },
+   {
+    "idx": 65,
+    "truth": "10/11/2017",
+    "got": "2017-01-10",
+    "confidence": 0.326
+   }
+  ],
+  "address": [
+   {
+    "idx": 0,
+    "truth": "NO 2 & 4, JALAN BAYU 4, BANDAR SERI ALAM, B1750 MASAI, JOHOR",
+    "got": "NO 2 & 4, JalanAYUU,, BANDARIARI,,11,11117,,AI",
+    "confidence": 0.422
+   },
+   {
+    "idx": 1,
+    "truth": "NO 2 & 4, JALAN BAYU 4, BANDAR SERI ALAM, 81750 MASAI, JOHOR",
+    "got": "NO 2 & 4, JANAYU4, BAND BANDARI,,,1111111757777",
+    "confidence": 0.415
+   },
+   {
+    "idx": 2,
+    "truth": "NO.59 JALAN PERMAS 9/5 BANDAR BARU PERMAS JAYA 81750 JOHOR BAHRU",
+    "got": "NO.59 JLAN PERAS995 BAND BAR BARU PER J 8AHAHAH",
+    "confidence": 0.325
+   }
+  ],
+  "total": [
+   {
+    "idx": 6,
+    "truth": "6.35",
+    "got": 6.36,
+    "confidence": 0.828
+   },
+   {
+    "idx": 10,
+    "truth": "169.80",
+    "got": 169.78,
+    "confidence": 0.972
+   },
+   {
+    "idx": 13,
+    "truth": "30.25",
+    "got": 30.24,
+    "confidence": 0.742
+   }
+  ]
+ }
+}

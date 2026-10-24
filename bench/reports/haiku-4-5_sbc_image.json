@@ -1,0 +1,349 @@
+{
+ "system": "haiku-4-5",
+ "dataset": "sbc_image",
+ "images": 150,
+ "scored": 150,
+ "failed_calls": 0,
+ "fields": {
+  "deductible_individual": {
+   "present": 150,
+   "accuracy": 1.0,
+   "wrong": 0,
+   "missed_as_null": 0,
+   "mean_similarity": null,
+   "absent": 0,
+   "null_when_absent": null
+  },
+  "deductible_family": {
+   "present": 150,
+   "accuracy": 0.993,
+   "wrong": 1,
+   "missed_as_null": 0,
+   "mean_similarity": null,
+   "absent": 0,
+   "null_when_absent": null
+  },
+  "oop_max_individual": {
+   "present": 150,
+   "accuracy": 0.993,
+   "wrong": 1,
+   "missed_as_null": 0,
+   "mean_similarity": null,
+   "absent": 0,
+   "null_when_absent": null
+  },
+  "oop_max_family": {
+   "present": 150,
+   "accuracy": 0.993,
+   "wrong": 1,
+   "missed_as_null": 0,
+   "mean_similarity": null,
+   "absent": 0,
+   "null_when_absent": null
+  },
+  "pcp_copay": {
+   "present": 133,
+   "accuracy": 0.962,
+   "wrong": 4,
+   "missed_as_null": 1,
+   "mean_similarity": null,
+   "absent": 17,
+   "null_when_absent": 0.706
+  },
+  "specialist_copay": {
+   "present": 125,
+   "accuracy": 0.984,
+   "wrong": 2,
+   "missed_as_null": 0,
+   "mean_similarity": null,
+   "absent": 25,
+   "null_when_absent": 0.76
+  },
+  "urgent_care_copay": {
+   "present": 126,
+   "accuracy": 0.81,
+   "wrong": 1,
+   "missed_as_null": 23,
+   "mean_similarity": null,
+   "absent": 24,
+   "null_when_absent": 0.792
+  },
+  "er_copay": {
+   "present": 22,
+   "accuracy": 0.818,
+   "wrong": 0,
+   "missed_as_null": 4,
+   "mean_similarity": null,
+   "absent": 128,
+   "null_when_absent": 0.953
+  },
+  "er_coinsurance_pct": {
+   "present": 120,
+   "accuracy": 0.958,
+   "wrong": 0,
+   "missed_as_null": 5,
+   "mean_similarity": null,
+   "absent": 30,
+   "null_when_absent": 0.733
+  },
+  "generic_rx_copay": {
+   "present": 132,
+   "accuracy": 0.917,
+   "wrong": 10,
+   "missed_as_null": 1,
+   "mean_similarity": null,
+   "absent": 18,
+   "null_when_absent": 0.333
+  },
+  "peg_total": {
+   "present": 150,
+   "accuracy": 0.927,
+   "wrong": 10,
+   "missed_as_null": 1,
+   "mean_similarity": null,
+   "absent": 0,
+   "null_when_absent": null
+  },
+  "joe_total": {
+   "present": 150,
+   "accuracy": 0.967,
+   "wrong": 4,
+   "missed_as_null": 1,
+   "mean_similarity": null,
+   "absent": 0,
+   "null_when_absent": null
+  },
+  "mia_total": {
+   "present": 150,
+   "accuracy": 0.98,
+   "wrong": 2,
+   "missed_as_null": 1,
+   "mean_similarity": null,
+   "absent": 0,
+   "null_when_absent": null
+  }
+ },
+ "calibration": [
+  {
+   "confidence": "0.00-0.50",
+   "answers": 0,
+   "share": 0.0,
+   "accuracy": null
+  },
+  {
+   "confidence": "0.50-0.90",
+   "answers": 24,
+   "share": 0.014,
+   "accuracy": 0.875
+  },
+  {
+   "confidence": "0.90-0.99",
+   "answers": 1514,
+   "share": 0.906,
+   "accuracy": 0.978
+  },
+  {
+   "confidence": "0.99-1.00",
+   "answers": 133,
+   "share": 0.08,
+   "accuracy": 1.0
+  }
+ ],
+ "overall_accuracy": 0.978,
+ "latency_ms": {
+  "median": 3096,
+  "p90": 3433
+ },
+ "truncated_inputs": 0,
+ "input_tokens": 1186267,
+ "mean_image_tokens": null,
+ "cost_usd": 1.3905,
+ "examples_of_errors": {
+  "deductible_individual": [],
+  "deductible_family": [
+   {
+    "idx": 29,
+    "truth": "0.00",
+    "got": 4000,
+    "confidence": 0.95
+   }
+  ],
+  "oop_max_individual": [
+   {
+    "idx": 65,
+    "truth": "10600.00",
+    "got": 21200,
+    "confidence": 0.95
+   }
+  ],
+  "oop_max_family": [
+   {
+    "idx": 65,
+    "truth": "21200.00",
+    "got": 42400,
+    "confidence": 0.95
+   }
+  ],
+  "pcp_copay": [
+   {
+    "idx": 15,
+    "truth": null,
+    "got": 0
+   },
+   {
+    "idx": 35,
+    "truth": "55.00",
+    "got": 0,
+    "confidence": 0.85
+   },
+   {
+    "idx": 43,
+    "truth": "0.00",
+    "got": 50,
+    "confidence": 0.95
+   }
+  ],
+  "specialist_copay": [
+   {
+    "idx": 15,
+    "truth": null,
+    "got": 0
+   },
+   {
+    "idx": 32,
+    "truth": "30.00",
+    "got": 15,
+    "confidence": 0.85
+   },
+   {
+    "idx": 37,
+    "truth": null,
+    "got": 0
+   }
+  ],
+  "urgent_care_copay": [
+   {
+    "idx": 37,
+    "truth": null,
+    "got": 0
+   },
+   {
+    "idx": 84,
+    "truth": "65.00",
+    "got": 70,
+    "confidence": 0.92
+   },
+   {
+    "idx": 97,
+    "truth": null,
+    "got": 0
+   }
+  ],
+  "er_copay": [
+   {
+    "idx": 37,
+    "truth": null,
+    "got": 0
+   },
+   {
+    "idx": 72,
+    "truth": null,
+    "got": 0
+   },
+   {
+    "idx": 97,
+    "truth": null,
+    "got": 0
+   }
+  ],
+  "er_coinsurance_pct": [
+   {
+    "idx": 3,
+    "truth": null,
+    "got": 0
+   },
+   {
+    "idx": 9,
+    "truth": null,
+    "got": 0
+   },
+   {
+    "idx": 34,
+    "truth": null,
+    "got": 0
+   }
+  ],
+  "generic_rx_copay": [
+   {
+    "idx": 2,
+    "truth": null,
+    "got": 25
+   },
+   {
+    "idx": 3,
+    "truth": null,
+    "got": 0
+   },
+   {
+    "idx": 10,
+    "truth": "3.00",
+    "got": 25,
+    "confidence": 0.9
+   }
+  ],
+  "peg_total": [
+   {
+    "idx": 26,
+    "truth": "860.00",
+    "got": 1060,
+    "confidence": 0.95
+   },
+   {
+    "idx": 27,
+    "truth": "7160.00",
+    "got": 6860,
+    "confidence": 0.95
+   },
+   {
+    "idx": 38,
+    "truth": "7340.00",
+    "got": 4670,
+    "confidence": 0.95
+   }
+  ],
+  "joe_total": [
+   {
+    "idx": 14,
+    "truth": "4720.00",
+    "got": 1920,
+    "confidence": 0.95
+   },
+   {
+    "idx": 27,
+    "truth": "2420.00",
+    "got": 1020,
+    "confidence": 0.95
+   },
+   {
+    "idx": 69,
+    "truth": "400.00",
+    "got": 100,
+    "confidence": 0.95
+   }
+  ],
+  "mia_total": [
+   {
+    "idx": 27,
+    "truth": "2700.00",
+    "got": 2800,
+    "confidence": 0.95
+   },
+   {
+    "idx": 60,
+    "truth": "1920.00",
+    "got": 1920.2,
+    "confidence": 0.85
+   }
+  ]
+ }
+}

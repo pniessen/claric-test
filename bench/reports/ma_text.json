@@ -1,0 +1,162 @@
+{
+ "system": "clairic",
+ "dataset": "ma_text",
+ "images": 96,
+ "scored": 96,
+ "failed_calls": 0,
+ "fields": {
+  "moop_in_network": {
+   "present": 96,
+   "accuracy": 1.0,
+   "wrong": 0,
+   "missed_as_null": 0,
+   "mean_similarity": null,
+   "absent": 0,
+   "null_when_absent": null
+  },
+  "medical_deductible": {
+   "present": 96,
+   "accuracy": 1.0,
+   "wrong": 0,
+   "missed_as_null": 0,
+   "mean_similarity": null,
+   "absent": 0,
+   "null_when_absent": null
+  },
+  "pcp_copay": {
+   "present": 96,
+   "accuracy": 1.0,
+   "wrong": 0,
+   "missed_as_null": 0,
+   "mean_similarity": null,
+   "absent": 0,
+   "null_when_absent": null
+  },
+  "specialist_copay": {
+   "present": 96,
+   "accuracy": 1.0,
+   "wrong": 0,
+   "missed_as_null": 0,
+   "mean_similarity": null,
+   "absent": 0,
+   "null_when_absent": null
+  },
+  "er_copay": {
+   "present": 96,
+   "accuracy": 1.0,
+   "wrong": 0,
+   "missed_as_null": 0,
+   "mean_similarity": null,
+   "absent": 0,
+   "null_when_absent": null
+  },
+  "urgent_care_copay": {
+   "present": 96,
+   "accuracy": 1.0,
+   "wrong": 0,
+   "missed_as_null": 0,
+   "mean_similarity": null,
+   "absent": 0,
+   "null_when_absent": null
+  },
+  "inpatient_copay_per_day": {
+   "present": 96,
+   "accuracy": 1.0,
+   "wrong": 0,
+   "missed_as_null": 0,
+   "mean_similarity": null,
+   "absent": 0,
+   "null_when_absent": null
+  },
+  "inpatient_copay_days": {
+   "present": 96,
+   "accuracy": 1.0,
+   "wrong": 0,
+   "missed_as_null": 0,
+   "mean_similarity": null,
+   "absent": 0,
+   "null_when_absent": null
+  },
+  "drug_deductible": {
+   "present": 83,
+   "accuracy": 1.0,
+   "wrong": 0,
+   "missed_as_null": 0,
+   "mean_similarity": null,
+   "absent": 13,
+   "null_when_absent": 0.0
+  },
+  "generic_copay": {
+   "present": 83,
+   "accuracy": 1.0,
+   "wrong": 0,
+   "missed_as_null": 0,
+   "mean_similarity": null,
+   "absent": 13,
+   "null_when_absent": 1.0
+  }
+ },
+ "calibration": [
+  {
+   "confidence": "0.00-0.50",
+   "answers": 0,
+   "share": 0.0,
+   "accuracy": null
+  },
+  {
+   "confidence": "0.50-0.90",
+   "answers": 66,
+   "share": 0.071,
+   "accuracy": 1.0
+  },
+  {
+   "confidence": "0.90-0.99",
+   "answers": 517,
+   "share": 0.554,
+   "accuracy": 1.0
+  },
+  {
+   "confidence": "0.99-1.00",
+   "answers": 351,
+   "share": 0.376,
+   "accuracy": 1.0
+  }
+ ],
+ "overall_accuracy": 1.0,
+ "latency_ms": {
+  "median": 760,
+  "p90": 915
+ },
+ "truncated_inputs": 0,
+ "input_tokens": 1132900,
+ "mean_image_tokens": null,
+ "cost_usd": 0.1133,
+ "examples_of_errors": {
+  "moop_in_network": [],
+  "medical_deductible": [],
+  "pcp_copay": [],
+  "specialist_copay": [],
+  "er_copay": [],
+  "urgent_care_copay": [],
+  "inpatient_copay_per_day": [],
+  "inpatient_copay_days": [],
+  "drug_deductible": [
+   {
+    "idx": 48,
+    "truth": null,
+    "got": 0
+   },
+   {
+    "idx": 50,
+    "truth": null,
+    "got": 0
+   },
+   {
+    "idx": 63,
+    "truth": null,
+    "got": 0
+   }
+  ],
+  "generic_copay": []
+ }
+}

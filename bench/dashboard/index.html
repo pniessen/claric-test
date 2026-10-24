@@ -1,0 +1,333 @@
+<style>
+  .rx { display: flex; flex-direction: column; gap: var(--cds-gap-lg); font-family: var(--font-anthropic-sans); }
+  .rx h1 { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); margin: 0; text-wrap: balance; }
+  .rx .lede { margin: 0; max-width: 72ch; font-size: var(--cds-font-size-body); line-height: 1.55; }
+  .rx .lede b { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .rx .lede ul { margin: var(--cds-gap-xs) 0 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 4px; }
+  .rx .status { margin: 0; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+  .rx h2 { font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); margin: var(--cds-gap-md) 0 0; }
+  .rx .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: var(--cds-gap-md); }
+  .rx .card { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); min-width: 0; display: flex; flex-direction: column; gap: var(--cds-gap-sm); }
+  .rx .card h3 { margin: 0; font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); }
+  .rx .note { margin: 0; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); line-height: 1.5; }
+  .rx .chart { position: relative; min-height: 200px; }
+  .rx .chart svg { display: block; overflow: visible; }
+  .rx .legend { display: flex; flex-wrap: wrap; gap: var(--cds-gap-sm) var(--cds-gap-md); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+  .rx .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .rx .legend i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+  .rx .tabs { display: flex; flex-wrap: wrap; gap: var(--cds-gap-xs); }
+  .rx .tabs button { font: inherit; font-size: var(--cds-font-size-caption); padding: var(--cds-pad-xs) var(--cds-pad-sm); border-radius: 999px; border: 1px solid var(--color-border-line); background: var(--color-panel); color: var(--color-fg); cursor: pointer; }
+  .rx .tabs button[aria-selected="true"] { background: var(--color-fg); color: var(--color-bg); border-color: var(--color-fg); }
+  .rx .tabs button:focus-visible { outline: 2px solid var(--color-fg); outline-offset: 2px; }
+  .rx .tablebox { overflow-x: auto; }
+  .rx table { border-collapse: collapse; width: 100%; font-size: var(--cds-font-size-caption); font-variant-numeric: tabular-nums; }
+  .rx th, .rx td { padding: var(--cds-pad-xs) var(--cds-pad-sm); text-align: right; border-bottom: 1px solid var(--color-border-line); white-space: nowrap; }
+  .rx th:first-child, .rx td:first-child, .rx th:nth-child(2), .rx td:nth-child(2) { text-align: left; }
+  .rx th { color: var(--color-fg-muted); font-weight: var(--cds-font-weight-medium); vertical-align: bottom; white-space: normal; min-width: 5.5rem; }
+  .rx .tip { position: absolute; pointer-events: none; background: var(--cds-surface-popover); border: 1px solid var(--cds-border); border-radius: var(--cds-radius); box-shadow: var(--cds-shadow-popover); padding: var(--cds-pad-xs) var(--cds-pad-sm); font-size: var(--cds-font-size-caption); white-space: nowrap; z-index: 2; }
+  .rx .tip .k { color: var(--cds-text-secondary); }
+  .rx .fail { display: flex; align-items: center; justify-content: center; gap: 6px; min-height: inherit; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+  .rx .fail::before { content: ""; width: .375rem; height: .375rem; border-radius: 50%; background: var(--color-bad); }
+  .rx [data-dash-source-state=empty] { color: transparent; }
+  .rx [data-dash-source-state=refreshing] { opacity: .5; transition: opacity var(--cds-dur-slow); }
+  .rx ul.method { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 6px; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); line-height: 1.5; max-width: 82ch; }
+</style>
+
+<div class="rx">
+  <header style="display:flex;flex-direction:column;gap:var(--cds-gap-sm)">
+    <h1 id="top">Document extraction benchmark</h1>
+    <div class="lede" id="takeaway" data-source="runs">
+      <p style="margin:0">Best average field accuracy on each test set:</p>
+      <ul id="best"></ul>
+    </div>
+    <p class="status" id="status" data-source="runs"></p>
+    <div class="legend" id="legend" data-source="runs"></div>
+  </header>
+
+  <section class="card" id="overview">
+    <h3>Field accuracy by test set</h3>
+    <p class="note">Average share of fields matching the answer key, over the single-value fields of each test set.</p>
+    <div class="chart" id="chart-overview" data-source="runs"></div>
+  </section>
+
+  <section class="card" id="summary">
+    <h3>All runs</h3>
+    <p class="note">One row per system and test set. Confidence for Claude is its own estimate when asked; for Clairic it comes from the model.</p>
+    <div class="tablebox">
+      <table id="summary-table" data-source="runs" data-row-key="system,dataset">
+        <thead><tr>
+          <th data-field="dataset_label">Test set</th>
+          <th data-field="system_label">System</th>
+          <th data-field="images">Documents</th>
+          <th data-field="mean_field_accuracy">Field accuracy (%)</th>
+          <th data-field="null_ok">Left empty when missing (%)</th>
+          <th data-field="confident_accuracy">Accuracy at 0.9+ confidence (%)</th>
+          <th data-field="confident_share">Answers at 0.9+ confidence (%)</th>
+          <th data-field="median_ms">Median time (ms)</th>
+          <th data-field="cost_per_1k">Cost per 1,000 documents ($)</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <h2 id="detail">By test set</h2>
+  <div class="tabs" id="tabs" role="tablist" data-source="runs"></div>
+  <p class="note" id="about"></p>
+  <div class="grid">
+    <div class="card">
+      <h3>Accuracy by field</h3>
+      <p class="note">Share of documents where the field matches the answer key. List fields (items, parties) are a near-match F1 score.</p>
+      <div class="chart" id="chart-fields" data-source="fields"></div>
+    </div>
+    <div class="card">
+      <h3>Does confidence predict correctness?</h3>
+      <p class="note">Accuracy of answers in each confidence band; the label under each band counts the answers in it. A trustworthy score climbs steeply left to right.</p>
+      <div class="chart" id="chart-calib" data-source="calibration"></div>
+    </div>
+    <div class="card">
+      <h3>Left empty when the document doesn't say</h3>
+      <p class="note">Fields with no value in the answer key, such as a copay on a plan that charges coinsurance instead.</p>
+      <div class="chart" id="chart-null" data-source="fields"></div>
+    </div>
+  </div>
+
+  <section class="card" id="cost">
+    <h3>Cost and accuracy</h3>
+    <p class="note">Field accuracy against cost per 1,000 documents, on a log scale. Up and to the left is better.</p>
+    <div class="chart" id="chart-cost" data-source="runs"></div>
+  </section>
+
+  <section class="card" id="method">
+    <h3>How this was measured</h3>
+    <ul class="method">
+      <li>Every system gets the same document, field names and instructions. Images are shrunk to at most one megapixel.</li>
+      <li>SROIE (Malaysian receipt scans) and CORD v2 (Indonesian receipt photos) are public receipt test sets. Kleister NDA and Kleister Charity are SEC agreements and UK charity reports, sent as text.</li>
+      <li>Health plans: 150 ACA Marketplace plans' Summary of Benefits and Coverage, sent as text or as pages 1–3 plus the coverage-examples page, scored against CMS's 2026 public use files.</li>
+      <li>Medicare plans: 96 Humana 2027 Medicare Advantage plans (HMO and PPO, no special-needs plans), sent as text or as the benefits-table and drug-cost pages, scored against CMS's 2027 Plan Benefit Package data. Premium is left out because the documents show the total premium and CMS records only the medical part.</li>
+      <li>Dates are compared as calendar dates and amounts to the cent, except Kleister Charity amounts, which count if within £1 because its answer key mostly drops the pence. Text fields count only exact matches after dropping case, spaces and punctuation, so near-misses score zero.</li>
+      <li>Claude runs with structured JSON output and is asked to give its own confidence. Clairic's confidence comes from the model itself.</li>
+    </ul>
+  </section>
+</div>
+
+<script>
+(() => {
+  const ORDER = ["clairic", "haiku-5-5", "haiku-4-5", "textract"];
+  const LABEL = {clairic: "Clairic", textract: "AWS Textract", "haiku-5-5": "Claude Haiku 5.5", "haiku-4-5": "Claude Haiku 4.5"};
+  const color = (s) => dash.colors[Math.max(0, ORDER.indexOf(s)) % dash.colors.length];
+  const f1 = d3.format(".1f"), num = (x) => (x === "" || x == null ? null : Number(x));
+  const enc = (s) => encodeURIComponent(s);
+  let current = null;
+
+  const clear = (el) => { const keep = [...el.querySelectorAll(".tip")]; el.textContent = ""; keep.forEach((k) => el.appendChild(k)); };
+  function failed(el, d) {
+    clear(el);
+    if (["error", "connect", "declined"].includes(d.status)) {
+      const f = document.createElement("div"); f.className = "fail"; f.textContent = "Failed to load"; el.appendChild(f);
+    }
+  }
+  function tipFor(box) {
+    let t = box.querySelector(".tip");
+    if (!t) { t = document.createElement("div"); t.className = "tip"; t.hidden = true; box.appendChild(t); }
+    return t;
+  }
+  function showTip(box, tip, ev, head, lines) {
+    tip.textContent = "";
+    const h = document.createElement("div"); h.className = "k"; h.textContent = head; tip.appendChild(h);
+    for (const [c, txt] of lines) {
+      const r = document.createElement("div"); r.style.cssText = "display:flex;align-items:center;gap:6px";
+      if (c) { const i = document.createElement("i"); i.style.cssText = `width:8px;height:8px;border-radius:2px;background:${c}`; r.appendChild(i); }
+      r.appendChild(document.createTextNode(txt)); tip.appendChild(r);
+    }
+    tip.hidden = false;
+    const b = box.getBoundingClientRect(), w = tip.offsetWidth, h2 = tip.offsetHeight;
+    let x = ev.clientX - b.left + 12, y = ev.clientY - b.top + 12;
+    if (x + w > b.width) x = Math.max(0, ev.clientX - b.left - w - 12);
+    if (y + h2 > b.height) y = Math.max(0, ev.clientY - b.top - h2 - 12);
+    tip.style.left = x + "px"; tip.style.top = y + "px";
+  }
+
+  // Grouped horizontal bars, 0-100%: one row per key, one bar per system.
+  function hbars(el, rows, {key, order, label, sub, value, head}) {
+    clear(el);
+    if (!rows.length) { const p = document.createElement("p"); p.className = "note"; p.textContent = "No results yet."; el.appendChild(p); return; }
+    const tip = tipFor(el);
+    const systems = ORDER.filter((s) => rows.some((r) => r.system === s));
+    const keys = [...new Map(rows.map((r) => [r[key], r])).values()].sort((a, b) => num(a[order]) - num(b[order]));
+    const W = el.clientWidth || 320, bar = Math.min(12, 36 / Math.max(1, systems.length)), gap = 3;
+    const rowH = systems.length * (bar + gap) + 12, top = 6, bottom = 22, H = top + bottom + keys.length * rowH;
+    const svg = d3.select(el).insert("svg", ".tip").attr("width", "100%").attr("viewBox", `0 0 ${W} ${H}`);
+    const probe = svg.append("text").attr("font-size", "12").attr("visibility", "hidden");
+    const left = Math.min(W * 0.45, 8 + (d3.max(keys, (k) => {
+      probe.attr("font-size", "12").text(label(k)); let w = probe.node().getComputedTextLength();
+      if (sub && sub(k)) { probe.attr("font-size", "11").text(sub(k)); w = Math.max(w, probe.node().getComputedTextLength()); }
+      return w;
+    }) || 60));
+    probe.remove();
+    const x = d3.scaleLinear([0, 100], [left, W - 32]);
+    svg.selectAll("line.g").data([0, 25, 50, 75, 100]).join("line").attr("x1", (d) => x(d)).attr("x2", (d) => x(d))
+      .attr("y1", top).attr("y2", H - bottom).attr("stroke", "var(--cds-chart-grid)");
+    svg.selectAll("text.t").data([0, 50, 100]).join("text").attr("x", (d) => x(d)).attr("y", H - 6).attr("text-anchor", "middle")
+      .attr("font-size", "11").attr("fill", "var(--color-fg-muted)").text((d) => d + "%");
+    keys.forEach((k, i) => {
+      const y0 = top + i * rowH + 6;
+      const mid = y0 + (systems.length * (bar + gap)) / 2, note = sub ? sub(k) : "";
+      svg.append("text").attr("x", left - 8).attr("y", note ? mid - 7 : mid).attr("dy", "0.35em").attr("text-anchor", "end")
+        .attr("font-size", "12").attr("fill", "var(--color-fg)").text(label(k));
+      if (note) svg.append("text").attr("x", left - 8).attr("y", mid + 8).attr("dy", "0.35em").attr("text-anchor", "end")
+        .attr("font-size", "11").attr("fill", "var(--color-fg-muted)").text(note);
+      systems.forEach((s, j) => {
+        const r = rows.find((q) => q[key] === k[key] && q.system === s);
+        const v = r ? num(r[value]) : null;
+        if (v == null) return;
+        const y = y0 + j * (bar + gap);
+        svg.append("rect").attr("x", x(0)).attr("y", y).attr("height", bar).attr("width", Math.max(2, x(v) - x(0))).attr("rx", 4).attr("fill", color(s))
+          .on("mousemove", (ev) => showTip(el, tip, ev, head(k), [[color(s), `${LABEL[s] || s}: ${f1(v)}%`]]))
+          .on("mouseleave", () => { tip.hidden = true; });
+        svg.append("text").attr("x", x(v) + 4).attr("y", y + bar / 2).attr("dy", "0.35em").attr("font-size", "10")
+          .attr("fill", "var(--color-fg-muted)").text(f1(v));
+      });
+    });
+  }
+
+  function calib(el, rows) {
+    clear(el);
+    if (!rows.length) return;
+    const tip = tipFor(el);
+    const systems = ORDER.filter((s) => rows.some((r) => r.system === s));
+    const bands = [...new Map(rows.map((r) => [r.band, r])).values()].sort((a, b) => a.band_order - b.band_order);
+    const W = el.clientWidth || 320, H = 230, top = 10, bottom = 44, left = 36, right = 8;
+    const svg = d3.select(el).insert("svg", ".tip").attr("width", "100%").attr("viewBox", `0 0 ${W} ${H}`);
+    const x = d3.scaleBand(bands.map((b) => b.band), [left, W - right]).padding(0.25);
+    const xi = d3.scaleBand(systems, [0, x.bandwidth()]).padding(0.12);
+    const y = d3.scaleLinear([0, 100], [H - bottom, top]);
+    svg.selectAll("line.g").data([0, 25, 50, 75, 100]).join("line").attr("x1", left).attr("x2", W - right)
+      .attr("y1", (d) => y(d)).attr("y2", (d) => y(d)).attr("stroke", "var(--cds-chart-grid)");
+    svg.selectAll("text.yt").data([0, 50, 100]).join("text").attr("x", left - 6).attr("y", (d) => y(d)).attr("dy", "0.35em")
+      .attr("text-anchor", "end").attr("font-size", "11").attr("fill", "var(--color-fg-muted)").text((d) => d + "%");
+    const bandName = (b) => ({"0.00-0.50": "under 0.5", "0.50-0.90": "0.5–0.9", "0.90-0.99": "0.9–0.99", "0.99-1.00": "0.99+"}[b] || b);
+    bands.forEach((b) => {
+      svg.append("text").attr("x", x(b.band) + x.bandwidth() / 2).attr("y", H - bottom + 15).attr("text-anchor", "middle")
+        .attr("font-size", "11").attr("fill", "var(--color-fg)").text(bandName(b.band));
+      const counts = systems.map((s) => rows.find((r) => r.band === b.band && r.system === s)).filter(Boolean).map((r) => d3.format(",")(num(r.answers)));
+      svg.append("text").attr("x", x(b.band) + x.bandwidth() / 2).attr("y", H - bottom + 30).attr("text-anchor", "middle")
+        .attr("font-size", "10").attr("fill", "var(--color-fg-muted)").text("n " + counts.join(" / "));
+      systems.forEach((s) => {
+        const r = rows.find((q) => q.band === b.band && q.system === s);
+        const v = r ? num(r.accuracy) : null;
+        if (v == null) return;
+        svg.append("rect").attr("x", x(b.band) + xi(s)).attr("width", xi.bandwidth()).attr("y", y(v)).attr("height", y(0) - y(v)).attr("rx", 4).attr("fill", color(s))
+          .on("mousemove", (ev) => showTip(el, tip, ev, `Confidence ${bandName(b.band)}`, [[color(s), `${LABEL[s] || s}: ${f1(v)}% right of ${d3.format(",")(num(r.answers))}`]]))
+          .on("mouseleave", () => { tip.hidden = true; });
+      });
+    });
+  }
+
+  function scatter(el, rows) {
+    clear(el);
+    const tip = tipFor(el);
+    const pts = rows.filter((r) => num(r.cost_per_1k) > 0 && num(r.mean_field_accuracy) != null);
+    const W = el.clientWidth || 320, H = 260, top = 12, bottom = 30, left = 40, right = 16;
+    const svg = d3.select(el).insert("svg", ".tip").attr("width", "100%").attr("viewBox", `0 0 ${W} ${H}`);
+    const lo = d3.min(pts, (r) => num(r.cost_per_1k)) || 0.1, hi = d3.max(pts, (r) => num(r.cost_per_1k)) || 10;
+    const x = d3.scaleLog([Math.min(lo, 0.1) / 1.5, Math.max(hi, 10) * 1.5], [left, W - right]);
+    const y = d3.scaleLinear([0, 100], [H - bottom, top]);
+    const ticks = [0.01, 0.1, 1, 10, 100].filter((t) => t >= x.domain()[0] && t <= x.domain()[1]);
+    svg.selectAll("line.gx").data(ticks).join("line").attr("x1", (d) => x(d)).attr("x2", (d) => x(d)).attr("y1", top).attr("y2", H - bottom).attr("stroke", "var(--cds-chart-grid)");
+    svg.selectAll("line.gy").data([0, 50, 100]).join("line").attr("x1", left).attr("x2", W - right).attr("y1", (d) => y(d)).attr("y2", (d) => y(d)).attr("stroke", "var(--cds-chart-grid)");
+    svg.selectAll("text.xt").data(ticks).join("text").attr("x", (d) => x(d)).attr("y", H - 10).attr("text-anchor", "middle").attr("font-size", "11").attr("fill", "var(--color-fg-muted)").text((d) => "$" + d);
+    svg.selectAll("text.yt").data([0, 50, 100]).join("text").attr("x", left - 6).attr("y", (d) => y(d)).attr("dy", "0.35em").attr("text-anchor", "end").attr("font-size", "11").attr("fill", "var(--color-fg-muted)").text((d) => d + "%");
+    pts.forEach((r) => {
+      const cx = x(num(r.cost_per_1k)), cy = y(num(r.mean_field_accuracy));
+      svg.append("circle").attr("cx", cx).attr("cy", cy).attr("r", 5.5).attr("fill", color(r.system)).attr("fill-opacity", 0.9)
+        .on("mousemove", (ev) => showTip(el, tip, ev, `${r.system_label} · ${r.dataset_label}`, [[color(r.system), `${f1(num(r.mean_field_accuracy))}% field accuracy`], [null, `$${num(r.cost_per_1k)} per 1,000 documents`]]))
+        .on("mouseleave", () => { tip.hidden = true; });
+    });
+  }
+
+  function draw() {
+    const runs = dash.data("runs"), fields = dash.data("fields"), cal = dash.data("calibration");
+    const status = document.getElementById("status"), legend = document.getElementById("legend");
+    const best = document.getElementById("best"), tabs = document.getElementById("tabs");
+    legend.textContent = ""; best.textContent = ""; tabs.textContent = "";
+    if (runs.status !== "ok") {
+      status.textContent = "";
+      ["chart-overview", "chart-cost"].forEach((id) => failed(document.getElementById(id), runs));
+      document.querySelector("#summary-table tbody").textContent = "";
+      return;
+    }
+    const R = runs.data;
+    const datasets = [...new Map(R.map((r) => [r.dataset, r])).values()].sort((a, b) => num(a.dataset_order) - num(b.dataset_order));
+    if (!current || !datasets.some((d) => d.dataset === current)) current = datasets[0] && datasets[0].dataset;
+    const have = ORDER.filter((s) => R.some((r) => r.system === s));
+    status.textContent = `${have.length} systems, ${datasets.length} test sets.`;
+    have.forEach((s) => {
+      const sp = document.createElement("span"), i = document.createElement("i");
+      i.style.background = color(s); sp.appendChild(i); sp.appendChild(document.createTextNode(LABEL[s])); legend.appendChild(sp);
+    });
+
+    // Best system per test set, numbers marked to their rows
+    datasets.forEach((d) => {
+      const rows = R.filter((r) => r.dataset === d.dataset && num(r.mean_field_accuracy) != null);
+      if (!rows.length) return;
+      const top = rows.reduce((a, b) => (num(b.mean_field_accuracy) > num(a.mean_field_accuracy) ? b : a));
+      const li = document.createElement("li");
+      li.appendChild(document.createTextNode(`${d.dataset_label}: ${top.system_label}, `));
+      const b = document.createElement("b");
+      b.dataset.source = "runs"; b.dataset.field = "mean_field_accuracy";
+      b.dataset.where = `system=${enc(top.system)}&dataset=${enc(top.dataset)}`;
+      b.textContent = f1(num(top.mean_field_accuracy));
+      li.appendChild(b); li.appendChild(document.createTextNode("%"));
+      const cl = rows.find((r) => r.system === "clairic");
+      if (cl && cl !== top) {
+        li.appendChild(document.createTextNode(" (Clairic "));
+        const c = document.createElement("b");
+        c.dataset.source = "runs"; c.dataset.field = "mean_field_accuracy";
+        c.dataset.where = `system=clairic&dataset=${enc(d.dataset)}`;
+        c.textContent = f1(num(cl.mean_field_accuracy));
+        li.appendChild(c); li.appendChild(document.createTextNode("%)"));
+      }
+      best.appendChild(li);
+    });
+
+    hbars(document.getElementById("chart-overview"), R.filter((r) => num(r.mean_field_accuracy) != null),
+          {key: "dataset", order: "dataset_order", label: (k) => k.dataset_label, sub: (k) => k.dataset_note || "",
+           value: "mean_field_accuracy", head: (k) => k.dataset_label});
+
+    const tbody = document.querySelector("#summary-table tbody");
+    tbody.textContent = "";
+    const cols = ["dataset_label", "system_label", "images", "mean_field_accuracy", "null_ok", "confident_accuracy", "confident_share", "median_ms", "cost_per_1k"];
+    [...R].sort((a, b) => num(a.dataset_order) - num(b.dataset_order) || ORDER.indexOf(a.system) - ORDER.indexOf(b.system)).forEach((r) => {
+      const tr = document.createElement("tr");
+      tr.dataset.key = `${enc(r.system)},${enc(r.dataset)}`;
+      cols.forEach((c) => { const td = document.createElement("td"); td.textContent = r[c] === "" ? "—" : r[c]; tr.appendChild(td); });
+      tbody.appendChild(tr);
+    });
+
+    datasets.forEach((d) => {
+      const btn = document.createElement("button");
+      btn.type = "button"; btn.setAttribute("role", "tab"); btn.textContent = d.dataset_label;
+      btn.setAttribute("aria-selected", String(d.dataset === current));
+      btn.addEventListener("click", () => { current = d.dataset; draw(); });
+      tabs.appendChild(btn);
+    });
+    const cur = datasets.find((d) => d.dataset === current);
+    document.getElementById("about").textContent = cur ? cur.dataset_about : "";
+
+    const fc = document.getElementById("chart-fields"), nc = document.getElementById("chart-null"), cc = document.getElementById("chart-calib");
+    if (fields.status !== "ok") { failed(fc, fields); failed(nc, fields); }
+    else {
+      const F = fields.data.filter((r) => r.dataset === current);
+      hbars(fc, F.filter((r) => r.accuracy !== ""), {key: "field", order: "field_order", value: "accuracy",
+            label: (k) => k.field_label + (k.kind === "list" ? " (F1)" : ""), head: (k) => k.field_label});
+      hbars(nc, F.filter((r) => r.null_ok !== "" && num(r.absent) > 0), {key: "field", order: "field_order", value: "null_ok",
+            label: (k) => k.field_label, head: (k) => `${k.field_label} (not in document)`});
+    }
+    if (cal.status !== "ok") failed(cc, cal); else calib(cc, cal.data.filter((r) => r.dataset === current));
+    scatter(document.getElementById("chart-cost"), R);
+  }
+
+  dash.onData(draw);
+})();
+</script>

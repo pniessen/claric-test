@@ -1,0 +1,130 @@
+{
+ "system": "clairic",
+ "dataset": "nda",
+ "images": 83,
+ "scored": 83,
+ "failed_calls": 0,
+ "fields": {
+  "effective_date": {
+   "present": 62,
+   "accuracy": 0.919,
+   "wrong": 5,
+   "missed_as_null": 0,
+   "mean_similarity": null,
+   "absent": 21,
+   "null_when_absent": 0.762
+  },
+  "jurisdiction": {
+   "present": 78,
+   "accuracy": 1.0,
+   "wrong": 0,
+   "missed_as_null": 0,
+   "mean_similarity": 1.0,
+   "absent": 5,
+   "null_when_absent": 0.6
+  },
+  "party": {
+   "present": 83,
+   "mean_item_f1": 0.168,
+   "mean_item_f1_fuzzy": 0.172
+  },
+  "term": {
+   "present": 34,
+   "accuracy": 0.735,
+   "wrong": 7,
+   "missed_as_null": 2,
+   "mean_similarity": null,
+   "absent": 49,
+   "null_when_absent": 0.959
+  }
+ },
+ "calibration": [
+  {
+   "confidence": "0.00-0.50",
+   "answers": 4,
+   "share": 0.023,
+   "accuracy": 0.25
+  },
+  {
+   "confidence": "0.50-0.90",
+   "answers": 39,
+   "share": 0.227,
+   "accuracy": 0.821
+  },
+  {
+   "confidence": "0.90-0.99",
+   "answers": 41,
+   "share": 0.238,
+   "accuracy": 0.951
+  },
+  {
+   "confidence": "0.99-1.00",
+   "answers": 88,
+   "share": 0.512,
+   "accuracy": 1.0
+  }
+ ],
+ "overall_accuracy": 0.93,
+ "latency_ms": {
+  "median": 666,
+  "p90": 992
+ },
+ "truncated_inputs": 0,
+ "input_tokens": 610235,
+ "mean_image_tokens": null,
+ "cost_usd": 0.061,
+ "examples_of_errors": {
+  "effective_date": [
+   {
+    "idx": 3,
+    "truth": "2009-02-23",
+    "got": "2009-01-27",
+    "confidence": 0.373
+   },
+   {
+    "idx": 9,
+    "truth": "2015-12-11",
+    "got": "2015-11-11",
+    "confidence": 0.96
+   },
+   {
+    "idx": 12,
+    "truth": null,
+    "got": "2012-12-17"
+   }
+  ],
+  "jurisdiction": [
+   {
+    "idx": 49,
+    "truth": null,
+    "got": "Georgia"
+   },
+   {
+    "idx": 57,
+    "truth": null,
+    "got": "Delaware"
+   }
+  ],
+  "party": [],
+  "term": [
+   {
+    "idx": 4,
+    "truth": "3 years",
+    "got": 30,
+    "confidence": 0.712
+   },
+   {
+    "idx": 16,
+    "truth": "2 years",
+    "got": 48,
+    "confidence": 0.95
+   },
+   {
+    "idx": 28,
+    "truth": "2 years",
+    "got": 20,
+    "confidence": 0.588
+   }
+  ]
+ }
+}

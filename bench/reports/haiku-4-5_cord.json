@@ -1,0 +1,243 @@
+{
+ "system": "haiku-4-5",
+ "dataset": "cord",
+ "images": 100,
+ "scored": 100,
+ "failed_calls": 0,
+ "fields": {
+  "total_price": {
+   "present": 95,
+   "accuracy": 0.916,
+   "wrong": 8,
+   "missed_as_null": 0,
+   "mean_similarity": null,
+   "absent": 5,
+   "null_when_absent": 0.0
+  },
+  "subtotal_price": {
+   "present": 65,
+   "accuracy": 0.877,
+   "wrong": 8,
+   "missed_as_null": 0,
+   "mean_similarity": null,
+   "absent": 35,
+   "null_when_absent": 0.829
+  },
+  "tax_price": {
+   "present": 43,
+   "accuracy": 0.558,
+   "wrong": 9,
+   "missed_as_null": 10,
+   "mean_similarity": null,
+   "absent": 57,
+   "null_when_absent": 0.982
+  },
+  "service_price": {
+   "present": 12,
+   "accuracy": 0.75,
+   "wrong": 3,
+   "missed_as_null": 0,
+   "mean_similarity": null,
+   "absent": 88,
+   "null_when_absent": 0.898
+  },
+  "cash_price": {
+   "present": 67,
+   "accuracy": 0.881,
+   "wrong": 2,
+   "missed_as_null": 6,
+   "mean_similarity": null,
+   "absent": 33,
+   "null_when_absent": 0.667
+  },
+  "change_price": {
+   "present": 56,
+   "accuracy": 0.946,
+   "wrong": 2,
+   "missed_as_null": 1,
+   "mean_similarity": null,
+   "absent": 44,
+   "null_when_absent": 0.955
+  },
+  "item_quantity": {
+   "present": 29,
+   "accuracy": 0.966,
+   "wrong": 1,
+   "missed_as_null": 0,
+   "mean_similarity": null,
+   "absent": 71,
+   "null_when_absent": 0.127
+  },
+  "menu_items": {
+   "present": 100,
+   "mean_item_f1": 0.627,
+   "mean_item_f1_fuzzy": 0.8
+  }
+ },
+ "calibration": [
+  {
+   "confidence": "0.00-0.50",
+   "answers": 0,
+   "share": 0.0,
+   "accuracy": null
+  },
+  {
+   "confidence": "0.50-0.90",
+   "answers": 58,
+   "share": 0.166,
+   "accuracy": 0.621
+  },
+  {
+   "confidence": "0.90-0.99",
+   "answers": 285,
+   "share": 0.814,
+   "accuracy": 0.961
+  },
+  {
+   "confidence": "0.99-1.00",
+   "answers": 7,
+   "share": 0.02,
+   "accuracy": 1.0
+  }
+ ],
+ "overall_accuracy": 0.906,
+ "latency_ms": {
+  "median": 2414,
+  "p90": 3020
+ },
+ "truncated_inputs": 0,
+ "input_tokens": 265531,
+ "mean_image_tokens": null,
+ "cost_usd": 0.3521,
+ "examples_of_errors": {
+  "total_price": [
+   {
+    "idx": 4,
+    "truth": "174,600",
+    "got": 179600,
+    "confidence": 0.95
+   },
+   {
+    "idx": 9,
+    "truth": null,
+    "got": 50000
+   },
+   {
+    "idx": 18,
+    "truth": "156000",
+    "got": 158000,
+    "confidence": 0.85
+   }
+  ],
+  "subtotal_price": [
+   {
+    "idx": 4,
+    "truth": "194,000",
+    "got": 164000,
+    "confidence": 0.9
+   },
+   {
+    "idx": 9,
+    "truth": "36000",
+    "got": 38000,
+    "confidence": 0.9
+   },
+   {
+    "idx": 11,
+    "truth": null,
+    "got": 230000
+   }
+  ],
+  "tax_price": [
+   {
+    "idx": 0,
+    "truth": "5.455",
+    "got": 5.455,
+    "confidence": 0.85
+   },
+   {
+    "idx": 13,
+    "truth": "4.664",
+    "got": 4470,
+    "confidence": 0.8
+   },
+   {
+    "idx": 14,
+    "truth": "25,585",
+    "got": 25605,
+    "confidence": 0.85
+   }
+  ],
+  "service_price": [
+   {
+    "idx": 4,
+    "truth": null,
+    "got": 19400
+   },
+   {
+    "idx": 5,
+    "truth": null,
+    "got": 2818
+   },
+   {
+    "idx": 9,
+    "truth": null,
+    "got": 12000
+   }
+  ],
+  "cash_price": [
+   {
+    "idx": 0,
+    "truth": null,
+    "got": 60000
+   },
+   {
+    "idx": 8,
+    "truth": null,
+    "got": 50000
+   },
+   {
+    "idx": 12,
+    "truth": null,
+    "got": 120000
+   }
+  ],
+  "change_price": [
+   {
+    "idx": 4,
+    "truth": "25,400",
+    "got": 20400,
+    "confidence": 0.95
+   },
+   {
+    "idx": 8,
+    "truth": null,
+    "got": 0
+   },
+   {
+    "idx": 58,
+    "truth": "39,500",
+    "got": 59500,
+    "confidence": 0.85
+   }
+  ],
+  "item_quantity": [
+   {
+    "idx": 1,
+    "truth": null,
+    "got": 3
+   },
+   {
+    "idx": 4,
+    "truth": null,
+    "got": 3
+   },
+   {
+    "idx": 6,
+    "truth": null,
+    "got": 4
+   }
+  ],
+  "menu_items": []
+ }
+}

@@ -1,0 +1,251 @@
+{
+ "system": "clairic",
+ "dataset": "cord",
+ "images": 100,
+ "scored": 100,
+ "failed_calls": 0,
+ "fields": {
+  "total_price": {
+   "present": 95,
+   "accuracy": 0.968,
+   "wrong": 3,
+   "missed_as_null": 0,
+   "mean_similarity": null,
+   "absent": 5,
+   "null_when_absent": 0.0
+  },
+  "subtotal_price": {
+   "present": 65,
+   "accuracy": 0.908,
+   "wrong": 3,
+   "missed_as_null": 3,
+   "mean_similarity": null,
+   "absent": 35,
+   "null_when_absent": 0.914
+  },
+  "tax_price": {
+   "present": 43,
+   "accuracy": 0.884,
+   "wrong": 3,
+   "missed_as_null": 2,
+   "mean_similarity": null,
+   "absent": 57,
+   "null_when_absent": 0.982
+  },
+  "service_price": {
+   "present": 12,
+   "accuracy": 0.833,
+   "wrong": 2,
+   "missed_as_null": 0,
+   "mean_similarity": null,
+   "absent": 88,
+   "null_when_absent": 0.989
+  },
+  "cash_price": {
+   "present": 67,
+   "accuracy": 0.881,
+   "wrong": 5,
+   "missed_as_null": 3,
+   "mean_similarity": null,
+   "absent": 33,
+   "null_when_absent": 1.0
+  },
+  "change_price": {
+   "present": 56,
+   "accuracy": 0.964,
+   "wrong": 2,
+   "missed_as_null": 0,
+   "mean_similarity": null,
+   "absent": 44,
+   "null_when_absent": 0.977
+  },
+  "item_quantity": {
+   "present": 29,
+   "accuracy": 0.966,
+   "wrong": 1,
+   "missed_as_null": 0,
+   "mean_similarity": null,
+   "absent": 71,
+   "null_when_absent": 0.155
+  },
+  "menu_items": {
+   "present": 100,
+   "mean_item_f1": 0.106,
+   "mean_item_f1_fuzzy": 0.208
+  }
+ },
+ "calibration": [
+  {
+   "confidence": "0.00-0.50",
+   "answers": 44,
+   "share": 0.123,
+   "accuracy": 0.773
+  },
+  {
+   "confidence": "0.50-0.90",
+   "answers": 120,
+   "share": 0.334,
+   "accuracy": 0.933
+  },
+  {
+   "confidence": "0.90-0.99",
+   "answers": 81,
+   "share": 0.226,
+   "accuracy": 0.988
+  },
+  {
+   "confidence": "0.99-1.00",
+   "answers": 114,
+   "share": 0.318,
+   "accuracy": 1.0
+  }
+ ],
+ "overall_accuracy": 0.947,
+ "latency_ms": {
+  "median": 526,
+  "p90": 899
+ },
+ "input_tokens": 180841,
+ "mean_image_tokens": 846,
+ "cost_usd": 0.0181,
+ "examples_of_errors": {
+  "total_price": [
+   {
+    "idx": 9,
+    "truth": null,
+    "got": 36000
+   },
+   {
+    "idx": 18,
+    "truth": "156000",
+    "got": 150000,
+    "confidence": 0.75
+   },
+   {
+    "idx": 19,
+    "truth": "176000",
+    "got": 17600,
+    "confidence": 0.671
+   }
+  ],
+  "subtotal_price": [
+   {
+    "idx": 13,
+    "truth": [
+     "46.636",
+     "46.636"
+    ],
+    "got": 46636,
+    "confidence": 0.379
+   },
+   {
+    "idx": 18,
+    "truth": null,
+    "got": 150000
+   },
+   {
+    "idx": 57,
+    "truth": null,
+    "got": 20000
+   }
+  ],
+  "tax_price": [
+   {
+    "idx": 12,
+    "truth": null,
+    "got": 0
+   },
+   {
+    "idx": 66,
+    "truth": "3,636",
+    "got": 1000,
+    "confidence": 0.118
+   },
+   {
+    "idx": 98,
+    "truth": "22,790",
+    "got": 2279,
+    "confidence": 0.736
+   }
+  ],
+  "service_price": [
+   {
+    "idx": 41,
+    "truth": "48982.68",
+    "got": 46982.68,
+    "confidence": 0.428
+   },
+   {
+    "idx": 53,
+    "truth": "5.350",
+    "got": 5330,
+    "confidence": 0.196
+   },
+   {
+    "idx": 99,
+    "truth": null,
+    "got": 0
+   }
+  ],
+  "cash_price": [
+   {
+    "idx": 18,
+    "truth": "156000",
+    "got": 150000,
+    "confidence": 0.574
+   },
+   {
+    "idx": 49,
+    "truth": "50,000",
+    "got": 30000,
+    "confidence": 0.906
+   },
+   {
+    "idx": 58,
+    "truth": [
+     "100,000",
+     "100,000"
+    ],
+    "got": 100000,
+    "confidence": 0.592
+   }
+  ],
+  "change_price": [
+   {
+    "idx": 50,
+    "truth": "80,500",
+    "got": 60500,
+    "confidence": 0.868
+   },
+   {
+    "idx": 58,
+    "truth": "39,500",
+    "got": 37500,
+    "confidence": 0.685
+   },
+   {
+    "idx": 95,
+    "truth": null,
+    "got": 201
+   }
+  ],
+  "item_quantity": [
+   {
+    "idx": 4,
+    "truth": null,
+    "got": 4
+   },
+   {
+    "idx": 6,
+    "truth": null,
+    "got": 3
+   },
+   {
+    "idx": 8,
+    "truth": null,
+    "got": 3
+   }
+  ],
+  "menu_items": []
+ }
+}

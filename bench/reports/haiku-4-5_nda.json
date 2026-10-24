@@ -1,0 +1,122 @@
+{
+ "system": "haiku-4-5",
+ "dataset": "nda",
+ "images": 83,
+ "scored": 83,
+ "failed_calls": 0,
+ "fields": {
+  "effective_date": {
+   "present": 62,
+   "accuracy": 0.855,
+   "wrong": 5,
+   "missed_as_null": 4,
+   "mean_similarity": null,
+   "absent": 21,
+   "null_when_absent": 0.81
+  },
+  "jurisdiction": {
+   "present": 78,
+   "accuracy": 0.987,
+   "wrong": 0,
+   "missed_as_null": 1,
+   "mean_similarity": 0.987,
+   "absent": 5,
+   "null_when_absent": 0.8
+  },
+  "party": {
+   "present": 83,
+   "mean_item_f1": 0.883,
+   "mean_item_f1_fuzzy": 0.9
+  },
+  "term": {
+   "present": 34,
+   "accuracy": 0.971,
+   "wrong": 1,
+   "missed_as_null": 0,
+   "mean_similarity": null,
+   "absent": 49,
+   "null_when_absent": 0.776
+  }
+ },
+ "calibration": [
+  {
+   "confidence": "0.00-0.50",
+   "answers": 0,
+   "share": 0.0,
+   "accuracy": null
+  },
+  {
+   "confidence": "0.50-0.90",
+   "answers": 16,
+   "share": 0.095,
+   "accuracy": 0.812
+  },
+  {
+   "confidence": "0.90-0.99",
+   "answers": 109,
+   "share": 0.645,
+   "accuracy": 0.972
+  },
+  {
+   "confidence": "0.99-1.00",
+   "answers": 44,
+   "share": 0.26,
+   "accuracy": 1.0
+  }
+ ],
+ "overall_accuracy": 0.964,
+ "latency_ms": {
+  "median": 1686,
+  "p90": 1917
+ },
+ "truncated_inputs": 0,
+ "input_tokens": 372502,
+ "mean_image_tokens": null,
+ "cost_usd": 0.4097,
+ "examples_of_errors": {
+  "effective_date": [
+   {
+    "idx": 8,
+    "truth": "2008-03-31",
+    "got": "2008-03-21",
+    "confidence": 0.85
+   },
+   {
+    "idx": 12,
+    "truth": null,
+    "got": "2012-12-17"
+   },
+   {
+    "idx": 22,
+    "truth": null,
+    "got": "2018-04-01"
+   }
+  ],
+  "jurisdiction": [
+   {
+    "idx": 49,
+    "truth": null,
+    "got": "Georgia"
+   }
+  ],
+  "party": [],
+  "term": [
+   {
+    "idx": 16,
+    "truth": "2 years",
+    "got": 48,
+    "confidence": 0.85
+   },
+   {
+    "idx": 25,
+    "truth": null,
+    "got": 12
+   },
+   {
+    "idx": 26,
+    "truth": null,
+    "got": 12
+   }
+  ]
+ }
+}

@@ -1,0 +1,228 @@
+{
+ "system": "haiku-5-5",
+ "dataset": "cord",
+ "images": 100,
+ "scored": 100,
+ "failed_calls": 0,
+ "fields": {
+  "total_price": {
+   "present": 95,
+   "accuracy": 0.979,
+   "wrong": 1,
+   "missed_as_null": 1,
+   "mean_similarity": null,
+   "absent": 5,
+   "null_when_absent": 0.0
+  },
+  "subtotal_price": {
+   "present": 65,
+   "accuracy": 0.954,
+   "wrong": 1,
+   "missed_as_null": 2,
+   "mean_similarity": null,
+   "absent": 35,
+   "null_when_absent": 0.943
+  },
+  "tax_price": {
+   "present": 43,
+   "accuracy": 0.907,
+   "wrong": 3,
+   "missed_as_null": 1,
+   "mean_similarity": null,
+   "absent": 57,
+   "null_when_absent": 1.0
+  },
+  "service_price": {
+   "present": 12,
+   "accuracy": 0.917,
+   "wrong": 1,
+   "missed_as_null": 0,
+   "mean_similarity": null,
+   "absent": 88,
+   "null_when_absent": 0.989
+  },
+  "cash_price": {
+   "present": 67,
+   "accuracy": 0.955,
+   "wrong": 3,
+   "missed_as_null": 0,
+   "mean_similarity": null,
+   "absent": 33,
+   "null_when_absent": 0.909
+  },
+  "change_price": {
+   "present": 56,
+   "accuracy": 1.0,
+   "wrong": 0,
+   "missed_as_null": 0,
+   "mean_similarity": null,
+   "absent": 44,
+   "null_when_absent": 0.977
+  },
+  "item_quantity": {
+   "present": 29,
+   "accuracy": 1.0,
+   "wrong": 0,
+   "missed_as_null": 0,
+   "mean_similarity": null,
+   "absent": 71,
+   "null_when_absent": 0.296
+  },
+  "menu_items": {
+   "present": 100,
+   "mean_item_f1": 0.818,
+   "mean_item_f1_fuzzy": 0.906
+  }
+ },
+ "calibration": [
+  {
+   "confidence": "0.00-0.50",
+   "answers": 2,
+   "share": 0.006,
+   "accuracy": 0.5
+  },
+  {
+   "confidence": "0.50-0.90",
+   "answers": 117,
+   "share": 0.322,
+   "accuracy": 0.94
+  },
+  {
+   "confidence": "0.90-0.99",
+   "answers": 244,
+   "share": 0.672,
+   "accuracy": 0.996
+  },
+  {
+   "confidence": "0.99-1.00",
+   "answers": 0,
+   "share": 0.0,
+   "accuracy": null
+  }
+ ],
+ "overall_accuracy": 0.975,
+ "latency_ms": {
+  "median": 1690,
+  "p90": 3173
+ },
+ "truncated_inputs": 0,
+ "input_tokens": 295531,
+ "mean_image_tokens": null,
+ "cost_usd": 0.043,
+ "examples_of_errors": {
+  "total_price": [
+   {
+    "idx": 9,
+    "truth": null,
+    "got": 36000
+   },
+   {
+    "idx": 37,
+    "truth": null,
+    "got": 20000
+   },
+   {
+    "idx": 39,
+    "truth": null,
+    "got": 3112800
+   }
+  ],
+  "subtotal_price": [
+   {
+    "idx": 13,
+    "truth": [
+     "46.636",
+     "46.636"
+    ],
+    "got": 46636,
+    "confidence": 0.7
+   },
+   {
+    "idx": 18,
+    "truth": null,
+    "got": 156000
+   },
+   {
+    "idx": 71,
+    "truth": null,
+    "got": 198000
+   }
+  ],
+  "tax_price": [
+   {
+    "idx": 31,
+    "truth": "18,126",
+    "got": 10260,
+    "confidence": 0.85
+   },
+   {
+    "idx": 60,
+    "truth": "-",
+    "got": 0,
+    "confidence": 0.6
+   },
+   {
+    "idx": 65,
+    "truth": "-",
+    "got": 0,
+    "confidence": 0.6
+   }
+  ],
+  "service_price": [
+   {
+    "idx": 31,
+    "truth": "10,260",
+    "got": 18126,
+    "confidence": 0.85
+   },
+   {
+    "idx": 42,
+    "truth": null,
+    "got": 1500
+   }
+  ],
+  "cash_price": [
+   {
+    "idx": 8,
+    "truth": null,
+    "got": 50000
+   },
+   {
+    "idx": 12,
+    "truth": null,
+    "got": 120000
+   },
+   {
+    "idx": 49,
+    "truth": "50,000",
+    "got": 30000,
+    "confidence": 0.8
+   }
+  ],
+  "change_price": [
+   {
+    "idx": 95,
+    "truth": null,
+    "got": 201
+   }
+  ],
+  "item_quantity": [
+   {
+    "idx": 4,
+    "truth": null,
+    "got": 4
+   },
+   {
+    "idx": 6,
+    "truth": null,
+    "got": 4
+   },
+   {
+    "idx": 10,
+    "truth": null,
+    "got": 1
+   }
+  ],
+  "menu_items": []
+ }
+}

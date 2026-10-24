@@ -1,0 +1,277 @@
+{
+ "system": "clairic",
+ "dataset": "charity",
+ "images": 440,
+ "scored": 440,
+ "failed_calls": 0,
+ "fields": {
+  "charity_name": {
+   "present": 440,
+   "accuracy": 0.705,
+   "wrong": 121,
+   "missed_as_null": 9,
+   "mean_similarity": 0.895,
+   "absent": 0,
+   "null_when_absent": null
+  },
+  "charity_number": {
+   "present": 437,
+   "accuracy": 0.961,
+   "wrong": 6,
+   "missed_as_null": 11,
+   "mean_similarity": 0.97,
+   "absent": 3,
+   "null_when_absent": 0.667
+  },
+  "report_date": {
+   "present": 440,
+   "accuracy": 0.973,
+   "wrong": 12,
+   "missed_as_null": 0,
+   "mean_similarity": null,
+   "absent": 0,
+   "null_when_absent": null
+  },
+  "income_annually_in_british_pounds": {
+   "present": 434,
+   "accuracy": 0.735,
+   "wrong": 108,
+   "missed_as_null": 7,
+   "mean_similarity": null,
+   "absent": 6,
+   "null_when_absent": 0.5
+  },
+  "spending_annually_in_british_pounds": {
+   "present": 434,
+   "accuracy": 0.721,
+   "wrong": 114,
+   "missed_as_null": 7,
+   "mean_similarity": null,
+   "absent": 6,
+   "null_when_absent": 0.333
+  },
+  "address__postcode": {
+   "present": 426,
+   "accuracy": 0.77,
+   "wrong": 84,
+   "missed_as_null": 14,
+   "mean_similarity": 0.914,
+   "absent": 14,
+   "null_when_absent": 0.786
+  },
+  "address__post_town": {
+   "present": 422,
+   "accuracy": 0.929,
+   "wrong": 22,
+   "missed_as_null": 8,
+   "mean_similarity": 0.94,
+   "absent": 18,
+   "null_when_absent": 0.389
+  },
+  "address__street_line": {
+   "present": 390,
+   "accuracy": 0.828,
+   "wrong": 38,
+   "missed_as_null": 29,
+   "mean_similarity": 0.882,
+   "absent": 50,
+   "null_when_absent": 0.76
+  }
+ },
+ "calibration": [
+  {
+   "confidence": "0.00-0.50",
+   "answers": 337,
+   "share": 0.101,
+   "accuracy": 0.412
+  },
+  {
+   "confidence": "0.50-0.90",
+   "answers": 910,
+   "share": 0.273,
+   "accuracy": 0.808
+  },
+  {
+   "confidence": "0.90-0.99",
+   "answers": 812,
+   "share": 0.243,
+   "accuracy": 0.929
+  },
+  {
+   "confidence": "0.99-1.00",
+   "answers": 1279,
+   "share": 0.383,
+   "accuracy": 0.942
+  }
+ ],
+ "overall_accuracy": 0.849,
+ "latency_ms": {
+  "median": 1819,
+  "p90": 2814
+ },
+ "truncated_inputs": 5,
+ "input_tokens": 13857285,
+ "mean_image_tokens": null,
+ "cost_usd": 1.3857,
+ "examples_of_errors": {
+  "charity_name": [
+   {
+    "idx": 5,
+    "truth": "1st Bourne End Scout Group",
+    "got": "1s Bourne End Scout Group",
+    "confidence": 0.473
+   },
+   {
+    "idx": 6,
+    "truth": "Sayt-Sevenoaks Area Youth Trust",
+    "got": "Sevenoaks Area Youth Trust",
+    "confidence": 0.381
+   },
+   {
+    "idx": 7,
+    "truth": "Battersea Dogs' and Cats' Home",
+    "got": "BATTERSEA DOGS’ & CATS' HOME",
+    "confidence": 0.891
+   }
+  ],
+  "charity_number": [
+   {
+    "idx": 78,
+    "truth": "1170697",
+    "got": "1174697",
+    "confidence": 1.0
+   },
+   {
+    "idx": 99,
+    "truth": "1101935",
+    "got": "110193S",
+    "confidence": 0.995
+   },
+   {
+    "idx": 174,
+    "truth": "1170900",
+    "got": "10 pm.\nNo appointments are necessary.\nSamaritans Cheltenham & District\n2017-2018\n3\nLEGAL AND ADMINISTRATIVE INFORMATION\nRegistered charity number: 1170900",
+    "confidence": 0.908
+   }
+  ],
+  "report_date": [
+   {
+    "idx": 78,
+    "truth": "2018-08-31",
+    "got": "2018-05-15",
+    "confidence": 0.998
+   },
+   {
+    "idx": 134,
+    "truth": "2018-07-31",
+    "got": "2018-07-03",
+    "confidence": 0.431
+   },
+   {
+    "idx": 181,
+    "truth": "2016-02-28",
+    "got": "2016-02-29",
+    "confidence": 0.879
+   }
+  ],
+  "income_annually_in_british_pounds": [
+   {
+    "idx": 3,
+    "truth": "255653.00",
+    "got": 255633,
+    "confidence": 0.055
+   },
+   {
+    "idx": 11,
+    "truth": "25709000.00",
+    "got": 39309000,
+    "confidence": 0.768
+   },
+   {
+    "idx": 14,
+    "truth": "107771.00",
+    "got": 107711,
+    "confidence": 0.989
+   }
+  ],
+  "spending_annually_in_british_pounds": [
+   {
+    "idx": 3,
+    "truth": "258287.00",
+    "got": 258284,
+    "confidence": 0.001
+   },
+   {
+    "idx": 5,
+    "truth": "38246.00",
+    "got": 36814,
+    "confidence": 0.89
+   },
+   {
+    "idx": 11,
+    "truth": "24586000.00",
+    "got": 36357000,
+    "confidence": 0.364
+   }
+  ],
+  "address__postcode": [
+   {
+    "idx": 1,
+    "truth": "SS0 8HX",
+    "got": "SSO 8HX",
+    "confidence": 0.988
+   },
+   {
+    "idx": 5,
+    "truth": "SL8 5AE",
+    "got": "SL8 sAE",
+    "confidence": 0.999
+   },
+   {
+    "idx": 8,
+    "truth": "SG18 9N4",
+    "got": "SG18 9NR",
+    "confidence": 0.977
+   }
+  ],
+  "address__post_town": [
+   {
+    "idx": 8,
+    "truth": "BROOM",
+    "got": "HITCHIN",
+    "confidence": 0.742
+   },
+   {
+    "idx": 49,
+    "truth": "HEREFORD",
+    "got": "HAY-ON-WYE",
+    "confidence": 0.966
+   },
+   {
+    "idx": 55,
+    "truth": null,
+    "got": "Hull"
+   }
+  ],
+  "address__street_line": [
+   {
+    "idx": 13,
+    "truth": "34-38 BRENKLEY WAY",
+    "got": "36 Brenkley Way",
+    "confidence": 0.999
+   },
+   {
+    "idx": 20,
+    "truth": "94 STAMFORD HILL",
+    "got": "9 Lingwood Road",
+    "confidence": 0.965
+   },
+   {
+    "idx": 21,
+    "truth": "28 LAWRENCE ROAD",
+    "got": "Lawrence Road",
+    "confidence": 0.625
+   }
+  ]
+ }
+}

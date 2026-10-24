@@ -1,0 +1,162 @@
+{
+ "system": "haiku-5-5",
+ "dataset": "sroie",
+ "images": 347,
+ "scored": 347,
+ "failed_calls": 0,
+ "fields": {
+  "company": {
+   "present": 347,
+   "accuracy": 0.761,
+   "wrong": 83,
+   "missed_as_null": 0,
+   "mean_similarity": 0.907,
+   "absent": 0,
+   "null_when_absent": null
+  },
+  "date": {
+   "present": 347,
+   "accuracy": 0.951,
+   "wrong": 17,
+   "missed_as_null": 0,
+   "mean_similarity": null,
+   "absent": 0,
+   "null_when_absent": null
+  },
+  "address": {
+   "present": 347,
+   "accuracy": 0.879,
+   "wrong": 41,
+   "missed_as_null": 1,
+   "mean_similarity": 0.971,
+   "absent": 0,
+   "null_when_absent": null
+  },
+  "total": {
+   "present": 347,
+   "accuracy": 0.971,
+   "wrong": 10,
+   "missed_as_null": 0,
+   "mean_similarity": null,
+   "absent": 0,
+   "null_when_absent": null
+  }
+ },
+ "calibration": [
+  {
+   "confidence": "0.00-0.50",
+   "answers": 4,
+   "share": 0.003,
+   "accuracy": 0.25
+  },
+  {
+   "confidence": "0.50-0.90",
+   "answers": 368,
+   "share": 0.265,
+   "accuracy": 0.815
+  },
+  {
+   "confidence": "0.90-0.99",
+   "answers": 1015,
+   "share": 0.732,
+   "accuracy": 0.921
+  },
+  {
+   "confidence": "0.99-1.00",
+   "answers": 0,
+   "share": 0.0,
+   "accuracy": null
+  }
+ ],
+ "overall_accuracy": 0.891,
+ "latency_ms": {
+  "median": 1410,
+  "p90": 1816
+ },
+ "truncated_inputs": 0,
+ "input_tokens": 758455,
+ "mean_image_tokens": null,
+ "cost_usd": 0.1028,
+ "examples_of_errors": {
+  "company": [
+   {
+    "idx": 10,
+    "truth": "99 SPEED MART S/B",
+    "got": "99 SPEED MART S/B (519537-X)",
+    "confidence": 0.9
+   },
+   {
+    "idx": 13,
+    "truth": "OLD TOWN KOPITAM SND BHD",
+    "got": "OLDTOWN WHITE COFFEE",
+    "confidence": 0.9
+   },
+   {
+    "idx": 15,
+    "truth": "TED HENG STATIONERY & BOOKS",
+    "got": "TEO HENG STATIONERY & BOOKS",
+    "confidence": 0.95
+   }
+  ],
+  "date": [
+   {
+    "idx": 10,
+    "truth": "20-11-17",
+    "got": "2020-11-17",
+    "confidence": 0.85
+   },
+   {
+    "idx": 24,
+    "truth": "03 MAR 19",
+    "got": "2018-03-03",
+    "confidence": 0.85
+   },
+   {
+    "idx": 28,
+    "truth": "25 MAR 2018",
+    "got": "2018-03-26",
+    "confidence": 0.9
+   }
+  ],
+  "address": [
+   {
+    "idx": 8,
+    "truth": "NO. 5-7, JALAN MAHAGONI 7/1, SEKYSEN 4, BANDAR UTAMA, 44300 BATANG KALI, SELANGOR.",
+    "got": "No. 5-7, Jalan Mahagoni 7/1, Seksyen 4, Bandar Utama, 44300 Batang Kali, Selangor.",
+    "confidence": 0.8
+   },
+   {
+    "idx": 13,
+    "truth": "SRI RAMPAI",
+    "got": "Old Town Kopitiam Sdn Bhd (716269-X), Sri Rampai",
+    "confidence": 0.4
+   },
+   {
+    "idx": 15,
+    "truth": "NO. 53, JALAN BESAR, 45600 BATANG BERJUNTAI SELANGOR DARUL EHSAN",
+    "got": "NO. 53, JALAN BESAR, 48000 BATANG BERJUNTAI, SELANGOR DARUL EHSAN",
+    "confidence": 0.8
+   }
+  ],
+  "total": [
+   {
+    "idx": 110,
+    "truth": "4.00",
+    "got": 3.99,
+    "confidence": 0.85
+   },
+   {
+    "idx": 130,
+    "truth": "7.20",
+    "got": 7.65,
+    "confidence": 0.93
+   },
+   {
+    "idx": 152,
+    "truth": "19.10",
+    "got": 18.1,
+    "confidence": 0.9
+   }
+  ]
+ }
+}

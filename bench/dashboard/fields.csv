@@ -1,0 +1,191 @@
+system,system_label,dataset,dataset_label,dataset_note,dataset_about,dataset_order,field,field_label,field_order,kind,present,accuracy,absent,null_ok
+clairic,Clairic,charity,Kleister Charity,Charity reports,"Charity annual reports, text",7,charity_name,Charity name,0,value,440,70.5,0,
+clairic,Clairic,charity,Kleister Charity,Charity reports,"Charity annual reports, text",7,charity_number,Charity number,1,value,437,96.1,3,66.7
+clairic,Clairic,charity,Kleister Charity,Charity reports,"Charity annual reports, text",7,report_date,Report date,2,value,440,97.3,0,
+clairic,Clairic,charity,Kleister Charity,Charity reports,"Charity annual reports, text",7,income_annually_in_british_pounds,Income (£),3,value,434,73.5,6,50.0
+clairic,Clairic,charity,Kleister Charity,Charity reports,"Charity annual reports, text",7,spending_annually_in_british_pounds,Spending (£),4,value,434,72.1,6,33.3
+clairic,Clairic,charity,Kleister Charity,Charity reports,"Charity annual reports, text",7,address__postcode,Postcode,5,value,426,77.0,14,78.6
+clairic,Clairic,charity,Kleister Charity,Charity reports,"Charity annual reports, text",7,address__post_town,Town,6,value,422,92.9,18,38.9
+clairic,Clairic,charity,Kleister Charity,Charity reports,"Charity annual reports, text",7,address__street_line,Street,7,value,390,82.8,50,76.0
+clairic,Clairic,cord,CORD,Receipt photos,"Receipt photos, image",1,total_price,Total,0,value,95,96.8,5,0.0
+clairic,Clairic,cord,CORD,Receipt photos,"Receipt photos, image",1,subtotal_price,Subtotal,1,value,65,90.8,35,91.4
+clairic,Clairic,cord,CORD,Receipt photos,"Receipt photos, image",1,tax_price,Tax,2,value,43,88.4,57,98.2
+clairic,Clairic,cord,CORD,Receipt photos,"Receipt photos, image",1,service_price,Service charge,3,value,12,83.3,88,98.9
+clairic,Clairic,cord,CORD,Receipt photos,"Receipt photos, image",1,cash_price,Cash paid,4,value,67,88.1,33,100.0
+clairic,Clairic,cord,CORD,Receipt photos,"Receipt photos, image",1,change_price,Change,5,value,56,96.4,44,97.7
+clairic,Clairic,cord,CORD,Receipt photos,"Receipt photos, image",1,item_quantity,Item count,6,value,29,96.6,71,15.5
+clairic,Clairic,cord,CORD,Receipt photos,"Receipt photos, image",1,menu_items,Item names,7,list,100,20.8,,
+haiku-4-5,Claude Haiku 4.5,charity,Kleister Charity,Charity reports,"Charity annual reports, text",7,charity_name,Charity name,0,value,440,69.8,0,
+haiku-4-5,Claude Haiku 4.5,charity,Kleister Charity,Charity reports,"Charity annual reports, text",7,charity_number,Charity number,1,value,437,95.9,3,100.0
+haiku-4-5,Claude Haiku 4.5,charity,Kleister Charity,Charity reports,"Charity annual reports, text",7,report_date,Report date,2,value,440,97.3,0,
+haiku-4-5,Claude Haiku 4.5,charity,Kleister Charity,Charity reports,"Charity annual reports, text",7,income_annually_in_british_pounds,Income (£),3,value,434,81.1,6,50.0
+haiku-4-5,Claude Haiku 4.5,charity,Kleister Charity,Charity reports,"Charity annual reports, text",7,spending_annually_in_british_pounds,Spending (£),4,value,434,80.0,6,50.0
+haiku-4-5,Claude Haiku 4.5,charity,Kleister Charity,Charity reports,"Charity annual reports, text",7,address__postcode,Postcode,5,value,426,85.9,14,71.4
+haiku-4-5,Claude Haiku 4.5,charity,Kleister Charity,Charity reports,"Charity annual reports, text",7,address__post_town,Town,6,value,422,91.2,18,16.7
+haiku-4-5,Claude Haiku 4.5,charity,Kleister Charity,Charity reports,"Charity annual reports, text",7,address__street_line,Street,7,value,390,36.2,50,12.0
+haiku-4-5,Claude Haiku 4.5,cord,CORD,Receipt photos,"Receipt photos, image",1,total_price,Total,0,value,95,91.6,5,0.0
+haiku-4-5,Claude Haiku 4.5,cord,CORD,Receipt photos,"Receipt photos, image",1,subtotal_price,Subtotal,1,value,65,87.7,35,82.9
+haiku-4-5,Claude Haiku 4.5,cord,CORD,Receipt photos,"Receipt photos, image",1,tax_price,Tax,2,value,43,55.8,57,98.2
+haiku-4-5,Claude Haiku 4.5,cord,CORD,Receipt photos,"Receipt photos, image",1,service_price,Service charge,3,value,12,75.0,88,89.8
+haiku-4-5,Claude Haiku 4.5,cord,CORD,Receipt photos,"Receipt photos, image",1,cash_price,Cash paid,4,value,67,88.1,33,66.7
+haiku-4-5,Claude Haiku 4.5,cord,CORD,Receipt photos,"Receipt photos, image",1,change_price,Change,5,value,56,94.6,44,95.5
+haiku-4-5,Claude Haiku 4.5,cord,CORD,Receipt photos,"Receipt photos, image",1,item_quantity,Item count,6,value,29,96.6,71,12.7
+haiku-4-5,Claude Haiku 4.5,cord,CORD,Receipt photos,"Receipt photos, image",1,menu_items,Item names,7,list,100,80.0,,
+haiku-4-5,Claude Haiku 4.5,nda,Kleister NDA,Legal agreements,"Non-disclosure agreements, text",6,effective_date,Effective date,0,value,62,85.5,21,81.0
+haiku-4-5,Claude Haiku 4.5,nda,Kleister NDA,Legal agreements,"Non-disclosure agreements, text",6,jurisdiction,Jurisdiction,1,value,78,98.7,5,80.0
+haiku-4-5,Claude Haiku 4.5,nda,Kleister NDA,Legal agreements,"Non-disclosure agreements, text",6,party,Parties,2,list,83,90.0,,
+haiku-4-5,Claude Haiku 4.5,nda,Kleister NDA,Legal agreements,"Non-disclosure agreements, text",6,term,Term,3,value,34,97.1,49,77.6
+haiku-4-5,Claude Haiku 4.5,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,deductible_individual,"Deductible, individual",0,value,150,100.0,0,
+haiku-4-5,Claude Haiku 4.5,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,deductible_family,"Deductible, family",1,value,150,99.3,0,
+haiku-4-5,Claude Haiku 4.5,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,oop_max_individual,"Out-of-pocket limit, individual",2,value,150,99.3,0,
+haiku-4-5,Claude Haiku 4.5,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,oop_max_family,"Out-of-pocket limit, family",3,value,150,99.3,0,
+haiku-4-5,Claude Haiku 4.5,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,pcp_copay,Primary care copay,4,value,133,96.2,17,70.6
+haiku-4-5,Claude Haiku 4.5,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,specialist_copay,Specialist copay,5,value,125,98.4,25,76.0
+haiku-4-5,Claude Haiku 4.5,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,urgent_care_copay,Urgent care copay,6,value,126,81.0,24,79.2
+haiku-4-5,Claude Haiku 4.5,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,er_copay,ER copay,7,value,22,81.8,128,95.3
+haiku-4-5,Claude Haiku 4.5,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,er_coinsurance_pct,ER coinsurance %,8,value,120,95.8,30,73.3
+haiku-4-5,Claude Haiku 4.5,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,generic_rx_copay,Generic drug copay,9,value,132,91.7,18,33.3
+haiku-4-5,Claude Haiku 4.5,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,peg_total,Example: having a baby,10,value,150,92.7,0,
+haiku-4-5,Claude Haiku 4.5,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,joe_total,Example: diabetes,11,value,150,96.7,0,
+haiku-4-5,Claude Haiku 4.5,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,mia_total,Example: fracture,12,value,150,98.0,0,
+haiku-4-5,Claude Haiku 4.5,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,deductible_individual,"Deductible, individual",0,value,150,99.3,0,
+haiku-4-5,Claude Haiku 4.5,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,deductible_family,"Deductible, family",1,value,150,99.3,0,
+haiku-4-5,Claude Haiku 4.5,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,oop_max_individual,"Out-of-pocket limit, individual",2,value,150,100.0,0,
+haiku-4-5,Claude Haiku 4.5,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,oop_max_family,"Out-of-pocket limit, family",3,value,150,100.0,0,
+haiku-4-5,Claude Haiku 4.5,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,pcp_copay,Primary care copay,4,value,133,97.0,17,47.1
+haiku-4-5,Claude Haiku 4.5,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,specialist_copay,Specialist copay,5,value,125,98.4,25,68.0
+haiku-4-5,Claude Haiku 4.5,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,urgent_care_copay,Urgent care copay,6,value,126,100.0,24,58.3
+haiku-4-5,Claude Haiku 4.5,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,er_copay,ER copay,7,value,22,90.9,128,91.4
+haiku-4-5,Claude Haiku 4.5,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,er_coinsurance_pct,ER coinsurance %,8,value,120,100.0,30,66.7
+haiku-4-5,Claude Haiku 4.5,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,generic_rx_copay,Generic drug copay,9,value,132,93.2,18,38.9
+haiku-4-5,Claude Haiku 4.5,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,peg_total,Example: having a baby,10,value,150,93.3,0,
+haiku-4-5,Claude Haiku 4.5,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,joe_total,Example: diabetes,11,value,150,97.3,0,
+haiku-4-5,Claude Haiku 4.5,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,mia_total,Example: fracture,12,value,150,98.7,0,
+haiku-4-5,Claude Haiku 4.5,sroie,SROIE,Receipt scans,"Scanned receipts, image",0,company,Company name,0,value,347,76.9,0,
+haiku-4-5,Claude Haiku 4.5,sroie,SROIE,Receipt scans,"Scanned receipts, image",0,date,Date,1,value,347,88.2,0,
+haiku-4-5,Claude Haiku 4.5,sroie,SROIE,Receipt scans,"Scanned receipts, image",0,address,Address,2,value,347,68.6,0,
+haiku-4-5,Claude Haiku 4.5,sroie,SROIE,Receipt scans,"Scanned receipts, image",0,total,Total,3,value,347,84.4,0,
+haiku-5-5,Claude Haiku 5.5,charity,Kleister Charity,Charity reports,"Charity annual reports, text",7,charity_name,Charity name,0,value,440,69.5,0,
+haiku-5-5,Claude Haiku 5.5,charity,Kleister Charity,Charity reports,"Charity annual reports, text",7,charity_number,Charity number,1,value,437,96.3,3,100.0
+haiku-5-5,Claude Haiku 5.5,charity,Kleister Charity,Charity reports,"Charity annual reports, text",7,report_date,Report date,2,value,440,97.3,0,
+haiku-5-5,Claude Haiku 5.5,charity,Kleister Charity,Charity reports,"Charity annual reports, text",7,income_annually_in_british_pounds,Income (£),3,value,434,82.5,6,66.7
+haiku-5-5,Claude Haiku 5.5,charity,Kleister Charity,Charity reports,"Charity annual reports, text",7,spending_annually_in_british_pounds,Spending (£),4,value,434,83.6,6,66.7
+haiku-5-5,Claude Haiku 5.5,charity,Kleister Charity,Charity reports,"Charity annual reports, text",7,address__postcode,Postcode,5,value,426,83.1,14,85.7
+haiku-5-5,Claude Haiku 5.5,charity,Kleister Charity,Charity reports,"Charity annual reports, text",7,address__post_town,Town,6,value,422,91.9,18,22.2
+haiku-5-5,Claude Haiku 5.5,charity,Kleister Charity,Charity reports,"Charity annual reports, text",7,address__street_line,Street,7,value,390,40.3,50,12.0
+haiku-5-5,Claude Haiku 5.5,cord,CORD,Receipt photos,"Receipt photos, image",1,total_price,Total,0,value,95,97.9,5,0.0
+haiku-5-5,Claude Haiku 5.5,cord,CORD,Receipt photos,"Receipt photos, image",1,subtotal_price,Subtotal,1,value,65,95.4,35,94.3
+haiku-5-5,Claude Haiku 5.5,cord,CORD,Receipt photos,"Receipt photos, image",1,tax_price,Tax,2,value,43,90.7,57,100.0
+haiku-5-5,Claude Haiku 5.5,cord,CORD,Receipt photos,"Receipt photos, image",1,service_price,Service charge,3,value,12,91.7,88,98.9
+haiku-5-5,Claude Haiku 5.5,cord,CORD,Receipt photos,"Receipt photos, image",1,cash_price,Cash paid,4,value,67,95.5,33,90.9
+haiku-5-5,Claude Haiku 5.5,cord,CORD,Receipt photos,"Receipt photos, image",1,change_price,Change,5,value,56,100.0,44,97.7
+haiku-5-5,Claude Haiku 5.5,cord,CORD,Receipt photos,"Receipt photos, image",1,item_quantity,Item count,6,value,29,100.0,71,29.6
+haiku-5-5,Claude Haiku 5.5,cord,CORD,Receipt photos,"Receipt photos, image",1,menu_items,Item names,7,list,100,90.6,,
+haiku-5-5,Claude Haiku 5.5,ma_image,Medicare plans (images),Humana 2027,"Humana Medicare Advantage Summary of Benefits, page images",5,moop_in_network,Out-of-pocket max,0,value,96,100.0,0,
+haiku-5-5,Claude Haiku 5.5,ma_image,Medicare plans (images),Humana 2027,"Humana Medicare Advantage Summary of Benefits, page images",5,medical_deductible,Medical deductible,1,value,96,100.0,0,
+haiku-5-5,Claude Haiku 5.5,ma_image,Medicare plans (images),Humana 2027,"Humana Medicare Advantage Summary of Benefits, page images",5,pcp_copay,Primary care copay,2,value,96,100.0,0,
+haiku-5-5,Claude Haiku 5.5,ma_image,Medicare plans (images),Humana 2027,"Humana Medicare Advantage Summary of Benefits, page images",5,specialist_copay,Specialist copay,3,value,96,100.0,0,
+haiku-5-5,Claude Haiku 5.5,ma_image,Medicare plans (images),Humana 2027,"Humana Medicare Advantage Summary of Benefits, page images",5,er_copay,ER copay,4,value,96,93.8,0,
+haiku-5-5,Claude Haiku 5.5,ma_image,Medicare plans (images),Humana 2027,"Humana Medicare Advantage Summary of Benefits, page images",5,urgent_care_copay,Urgent care copay,5,value,96,99.0,0,
+haiku-5-5,Claude Haiku 5.5,ma_image,Medicare plans (images),Humana 2027,"Humana Medicare Advantage Summary of Benefits, page images",5,inpatient_copay_per_day,Hospital copay per day,6,value,96,100.0,0,
+haiku-5-5,Claude Haiku 5.5,ma_image,Medicare plans (images),Humana 2027,"Humana Medicare Advantage Summary of Benefits, page images",5,inpatient_copay_days,Hospital copay days,7,value,96,99.0,0,
+haiku-5-5,Claude Haiku 5.5,ma_image,Medicare plans (images),Humana 2027,"Humana Medicare Advantage Summary of Benefits, page images",5,drug_deductible,Drug deductible,8,value,83,100.0,13,100.0
+haiku-5-5,Claude Haiku 5.5,ma_image,Medicare plans (images),Humana 2027,"Humana Medicare Advantage Summary of Benefits, page images",5,generic_copay,Generic drug copay,9,value,83,100.0,13,100.0
+haiku-5-5,Claude Haiku 5.5,ma_text,Medicare plans (text),Humana 2027,"Humana Medicare Advantage Summary of Benefits, text",4,moop_in_network,Out-of-pocket max,0,value,96,100.0,0,
+haiku-5-5,Claude Haiku 5.5,ma_text,Medicare plans (text),Humana 2027,"Humana Medicare Advantage Summary of Benefits, text",4,medical_deductible,Medical deductible,1,value,96,100.0,0,
+haiku-5-5,Claude Haiku 5.5,ma_text,Medicare plans (text),Humana 2027,"Humana Medicare Advantage Summary of Benefits, text",4,pcp_copay,Primary care copay,2,value,96,100.0,0,
+haiku-5-5,Claude Haiku 5.5,ma_text,Medicare plans (text),Humana 2027,"Humana Medicare Advantage Summary of Benefits, text",4,specialist_copay,Specialist copay,3,value,96,100.0,0,
+haiku-5-5,Claude Haiku 5.5,ma_text,Medicare plans (text),Humana 2027,"Humana Medicare Advantage Summary of Benefits, text",4,er_copay,ER copay,4,value,96,100.0,0,
+haiku-5-5,Claude Haiku 5.5,ma_text,Medicare plans (text),Humana 2027,"Humana Medicare Advantage Summary of Benefits, text",4,urgent_care_copay,Urgent care copay,5,value,96,100.0,0,
+haiku-5-5,Claude Haiku 5.5,ma_text,Medicare plans (text),Humana 2027,"Humana Medicare Advantage Summary of Benefits, text",4,inpatient_copay_per_day,Hospital copay per day,6,value,96,100.0,0,
+haiku-5-5,Claude Haiku 5.5,ma_text,Medicare plans (text),Humana 2027,"Humana Medicare Advantage Summary of Benefits, text",4,inpatient_copay_days,Hospital copay days,7,value,96,100.0,0,
+haiku-5-5,Claude Haiku 5.5,ma_text,Medicare plans (text),Humana 2027,"Humana Medicare Advantage Summary of Benefits, text",4,drug_deductible,Drug deductible,8,value,83,100.0,13,100.0
+haiku-5-5,Claude Haiku 5.5,ma_text,Medicare plans (text),Humana 2027,"Humana Medicare Advantage Summary of Benefits, text",4,generic_copay,Generic drug copay,9,value,83,100.0,13,100.0
+haiku-5-5,Claude Haiku 5.5,nda,Kleister NDA,Legal agreements,"Non-disclosure agreements, text",6,effective_date,Effective date,0,value,62,93.5,21,85.7
+haiku-5-5,Claude Haiku 5.5,nda,Kleister NDA,Legal agreements,"Non-disclosure agreements, text",6,jurisdiction,Jurisdiction,1,value,78,98.7,5,100.0
+haiku-5-5,Claude Haiku 5.5,nda,Kleister NDA,Legal agreements,"Non-disclosure agreements, text",6,party,Parties,2,list,83,89.9,,
+haiku-5-5,Claude Haiku 5.5,nda,Kleister NDA,Legal agreements,"Non-disclosure agreements, text",6,term,Term,3,value,34,91.2,49,73.5
+haiku-5-5,Claude Haiku 5.5,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,deductible_individual,"Deductible, individual",0,value,150,100.0,0,
+haiku-5-5,Claude Haiku 5.5,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,deductible_family,"Deductible, family",1,value,150,100.0,0,
+haiku-5-5,Claude Haiku 5.5,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,oop_max_individual,"Out-of-pocket limit, individual",2,value,150,100.0,0,
+haiku-5-5,Claude Haiku 5.5,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,oop_max_family,"Out-of-pocket limit, family",3,value,150,100.0,0,
+haiku-5-5,Claude Haiku 5.5,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,pcp_copay,Primary care copay,4,value,133,97.0,17,76.5
+haiku-5-5,Claude Haiku 5.5,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,specialist_copay,Specialist copay,5,value,125,98.4,25,76.0
+haiku-5-5,Claude Haiku 5.5,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,urgent_care_copay,Urgent care copay,6,value,126,81.7,24,91.7
+haiku-5-5,Claude Haiku 5.5,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,er_copay,ER copay,7,value,22,86.4,128,96.9
+haiku-5-5,Claude Haiku 5.5,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,er_coinsurance_pct,ER coinsurance %,8,value,120,94.2,30,76.7
+haiku-5-5,Claude Haiku 5.5,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,generic_rx_copay,Generic drug copay,9,value,132,91.7,18,72.2
+haiku-5-5,Claude Haiku 5.5,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,peg_total,Example: having a baby,10,value,150,92.7,0,
+haiku-5-5,Claude Haiku 5.5,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,joe_total,Example: diabetes,11,value,150,96.7,0,
+haiku-5-5,Claude Haiku 5.5,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,mia_total,Example: fracture,12,value,150,98.0,0,
+haiku-5-5,Claude Haiku 5.5,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,deductible_individual,"Deductible, individual",0,value,150,100.0,0,
+haiku-5-5,Claude Haiku 5.5,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,deductible_family,"Deductible, family",1,value,150,100.0,0,
+haiku-5-5,Claude Haiku 5.5,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,oop_max_individual,"Out-of-pocket limit, individual",2,value,150,100.0,0,
+haiku-5-5,Claude Haiku 5.5,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,oop_max_family,"Out-of-pocket limit, family",3,value,150,100.0,0,
+haiku-5-5,Claude Haiku 5.5,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,pcp_copay,Primary care copay,4,value,133,94.7,17,70.6
+haiku-5-5,Claude Haiku 5.5,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,specialist_copay,Specialist copay,5,value,125,98.4,25,76.0
+haiku-5-5,Claude Haiku 5.5,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,urgent_care_copay,Urgent care copay,6,value,126,100.0,24,66.7
+haiku-5-5,Claude Haiku 5.5,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,er_copay,ER copay,7,value,22,100.0,128,94.5
+haiku-5-5,Claude Haiku 5.5,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,er_coinsurance_pct,ER coinsurance %,8,value,120,100.0,30,66.7
+haiku-5-5,Claude Haiku 5.5,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,generic_rx_copay,Generic drug copay,9,value,132,96.2,18,66.7
+haiku-5-5,Claude Haiku 5.5,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,peg_total,Example: having a baby,10,value,150,93.3,0,
+haiku-5-5,Claude Haiku 5.5,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,joe_total,Example: diabetes,11,value,150,97.3,0,
+haiku-5-5,Claude Haiku 5.5,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,mia_total,Example: fracture,12,value,150,99.3,0,
+haiku-5-5,Claude Haiku 5.5,sroie,SROIE,Receipt scans,"Scanned receipts, image",0,company,Company name,0,value,347,76.1,0,
+haiku-5-5,Claude Haiku 5.5,sroie,SROIE,Receipt scans,"Scanned receipts, image",0,date,Date,1,value,347,95.1,0,
+haiku-5-5,Claude Haiku 5.5,sroie,SROIE,Receipt scans,"Scanned receipts, image",0,address,Address,2,value,347,87.9,0,
+haiku-5-5,Claude Haiku 5.5,sroie,SROIE,Receipt scans,"Scanned receipts, image",0,total,Total,3,value,347,97.1,0,
+clairic,Clairic,ma_image,Medicare plans (images),Humana 2027,"Humana Medicare Advantage Summary of Benefits, page images",5,moop_in_network,Out-of-pocket max,0,value,96,100.0,0,
+clairic,Clairic,ma_image,Medicare plans (images),Humana 2027,"Humana Medicare Advantage Summary of Benefits, page images",5,medical_deductible,Medical deductible,1,value,96,100.0,0,
+clairic,Clairic,ma_image,Medicare plans (images),Humana 2027,"Humana Medicare Advantage Summary of Benefits, page images",5,pcp_copay,Primary care copay,2,value,96,100.0,0,
+clairic,Clairic,ma_image,Medicare plans (images),Humana 2027,"Humana Medicare Advantage Summary of Benefits, page images",5,specialist_copay,Specialist copay,3,value,96,100.0,0,
+clairic,Clairic,ma_image,Medicare plans (images),Humana 2027,"Humana Medicare Advantage Summary of Benefits, page images",5,er_copay,ER copay,4,value,96,71.9,0,
+clairic,Clairic,ma_image,Medicare plans (images),Humana 2027,"Humana Medicare Advantage Summary of Benefits, page images",5,urgent_care_copay,Urgent care copay,5,value,96,100.0,0,
+clairic,Clairic,ma_image,Medicare plans (images),Humana 2027,"Humana Medicare Advantage Summary of Benefits, page images",5,inpatient_copay_per_day,Hospital copay per day,6,value,96,100.0,0,
+clairic,Clairic,ma_image,Medicare plans (images),Humana 2027,"Humana Medicare Advantage Summary of Benefits, page images",5,inpatient_copay_days,Hospital copay days,7,value,96,100.0,0,
+clairic,Clairic,ma_image,Medicare plans (images),Humana 2027,"Humana Medicare Advantage Summary of Benefits, page images",5,drug_deductible,Drug deductible,8,value,83,100.0,13,0.0
+clairic,Clairic,ma_image,Medicare plans (images),Humana 2027,"Humana Medicare Advantage Summary of Benefits, page images",5,generic_copay,Generic drug copay,9,value,83,100.0,13,100.0
+clairic,Clairic,ma_text,Medicare plans (text),Humana 2027,"Humana Medicare Advantage Summary of Benefits, text",4,moop_in_network,Out-of-pocket max,0,value,96,100.0,0,
+clairic,Clairic,ma_text,Medicare plans (text),Humana 2027,"Humana Medicare Advantage Summary of Benefits, text",4,medical_deductible,Medical deductible,1,value,96,100.0,0,
+clairic,Clairic,ma_text,Medicare plans (text),Humana 2027,"Humana Medicare Advantage Summary of Benefits, text",4,pcp_copay,Primary care copay,2,value,96,100.0,0,
+clairic,Clairic,ma_text,Medicare plans (text),Humana 2027,"Humana Medicare Advantage Summary of Benefits, text",4,specialist_copay,Specialist copay,3,value,96,100.0,0,
+clairic,Clairic,ma_text,Medicare plans (text),Humana 2027,"Humana Medicare Advantage Summary of Benefits, text",4,er_copay,ER copay,4,value,96,100.0,0,
+clairic,Clairic,ma_text,Medicare plans (text),Humana 2027,"Humana Medicare Advantage Summary of Benefits, text",4,urgent_care_copay,Urgent care copay,5,value,96,100.0,0,
+clairic,Clairic,ma_text,Medicare plans (text),Humana 2027,"Humana Medicare Advantage Summary of Benefits, text",4,inpatient_copay_per_day,Hospital copay per day,6,value,96,100.0,0,
+clairic,Clairic,ma_text,Medicare plans (text),Humana 2027,"Humana Medicare Advantage Summary of Benefits, text",4,inpatient_copay_days,Hospital copay days,7,value,96,100.0,0,
+clairic,Clairic,ma_text,Medicare plans (text),Humana 2027,"Humana Medicare Advantage Summary of Benefits, text",4,drug_deductible,Drug deductible,8,value,83,100.0,13,0.0
+clairic,Clairic,ma_text,Medicare plans (text),Humana 2027,"Humana Medicare Advantage Summary of Benefits, text",4,generic_copay,Generic drug copay,9,value,83,100.0,13,100.0
+clairic,Clairic,nda,Kleister NDA,Legal agreements,"Non-disclosure agreements, text",6,effective_date,Effective date,0,value,62,91.9,21,76.2
+clairic,Clairic,nda,Kleister NDA,Legal agreements,"Non-disclosure agreements, text",6,jurisdiction,Jurisdiction,1,value,78,100.0,5,60.0
+clairic,Clairic,nda,Kleister NDA,Legal agreements,"Non-disclosure agreements, text",6,party,Parties,2,list,83,17.2,,
+clairic,Clairic,nda,Kleister NDA,Legal agreements,"Non-disclosure agreements, text",6,term,Term,3,value,34,73.5,49,95.9
+clairic,Clairic,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,deductible_individual,"Deductible, individual",0,value,150,97.3,0,
+clairic,Clairic,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,deductible_family,"Deductible, family",1,value,150,98.0,0,
+clairic,Clairic,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,oop_max_individual,"Out-of-pocket limit, individual",2,value,150,97.3,0,
+clairic,Clairic,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,oop_max_family,"Out-of-pocket limit, family",3,value,150,97.3,0,
+clairic,Clairic,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,pcp_copay,Primary care copay,4,value,133,97.7,17,29.4
+clairic,Clairic,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,specialist_copay,Specialist copay,5,value,125,98.4,25,32.0
+clairic,Clairic,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,urgent_care_copay,Urgent care copay,6,value,126,81.7,24,33.3
+clairic,Clairic,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,er_copay,ER copay,7,value,22,81.8,128,57.8
+clairic,Clairic,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,er_coinsurance_pct,ER coinsurance %,8,value,120,100.0,30,53.3
+clairic,Clairic,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,generic_rx_copay,Generic drug copay,9,value,132,83.3,18,0.0
+clairic,Clairic,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,peg_total,Example: having a baby,10,value,150,92.7,0,
+clairic,Clairic,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,joe_total,Example: diabetes,11,value,150,96.0,0,
+clairic,Clairic,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,mia_total,Example: fracture,12,value,150,98.0,0,
+clairic,Clairic,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,deductible_individual,"Deductible, individual",0,value,150,98.0,0,
+clairic,Clairic,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,deductible_family,"Deductible, family",1,value,150,94.7,0,
+clairic,Clairic,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,oop_max_individual,"Out-of-pocket limit, individual",2,value,150,75.3,0,
+clairic,Clairic,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,oop_max_family,"Out-of-pocket limit, family",3,value,150,88.0,0,
+clairic,Clairic,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,pcp_copay,Primary care copay,4,value,133,79.7,17,11.8
+clairic,Clairic,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,specialist_copay,Specialist copay,5,value,125,93.6,25,20.0
+clairic,Clairic,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,urgent_care_copay,Urgent care copay,6,value,126,82.5,24,0.0
+clairic,Clairic,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,er_copay,ER copay,7,value,22,63.6,128,24.2
+clairic,Clairic,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,er_coinsurance_pct,ER coinsurance %,8,value,120,98.3,30,40.0
+clairic,Clairic,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,generic_rx_copay,Generic drug copay,9,value,132,55.3,18,0.0
+clairic,Clairic,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,peg_total,Example: having a baby,10,value,150,93.3,0,
+clairic,Clairic,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,joe_total,Example: diabetes,11,value,150,97.3,0,
+clairic,Clairic,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,mia_total,Example: fracture,12,value,150,98.0,0,
+clairic,Clairic,sroie,SROIE,Receipt scans,"Scanned receipts, image",0,company,Company name,0,value,347,2.3,0,
+clairic,Clairic,sroie,SROIE,Receipt scans,"Scanned receipts, image",0,date,Date,1,value,347,94.2,0,
+clairic,Clairic,sroie,SROIE,Receipt scans,"Scanned receipts, image",0,address,Address,2,value,347,0.0,0,
+clairic,Clairic,sroie,SROIE,Receipt scans,"Scanned receipts, image",0,total,Total,3,value,347,93.1,0,

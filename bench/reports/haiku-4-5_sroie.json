@@ -1,0 +1,162 @@
+{
+ "system": "haiku-4-5",
+ "dataset": "sroie",
+ "images": 347,
+ "scored": 347,
+ "failed_calls": 0,
+ "fields": {
+  "company": {
+   "present": 347,
+   "accuracy": 0.769,
+   "wrong": 80,
+   "missed_as_null": 0,
+   "mean_similarity": 0.915,
+   "absent": 0,
+   "null_when_absent": null
+  },
+  "date": {
+   "present": 347,
+   "accuracy": 0.882,
+   "wrong": 41,
+   "missed_as_null": 0,
+   "mean_similarity": null,
+   "absent": 0,
+   "null_when_absent": null
+  },
+  "address": {
+   "present": 347,
+   "accuracy": 0.686,
+   "wrong": 109,
+   "missed_as_null": 0,
+   "mean_similarity": 0.961,
+   "absent": 0,
+   "null_when_absent": null
+  },
+  "total": {
+   "present": 347,
+   "accuracy": 0.844,
+   "wrong": 54,
+   "missed_as_null": 0,
+   "mean_similarity": null,
+   "absent": 0,
+   "null_when_absent": null
+  }
+ },
+ "calibration": [
+  {
+   "confidence": "0.00-0.50",
+   "answers": 0,
+   "share": 0.0,
+   "accuracy": null
+  },
+  {
+   "confidence": "0.50-0.90",
+   "answers": 71,
+   "share": 0.051,
+   "accuracy": 0.451
+  },
+  {
+   "confidence": "0.90-0.99",
+   "answers": 1253,
+   "share": 0.903,
+   "accuracy": 0.808
+  },
+  {
+   "confidence": "0.99-1.00",
+   "answers": 64,
+   "share": 0.046,
+   "accuracy": 0.922
+  }
+ ],
+ "overall_accuracy": 0.795,
+ "latency_ms": {
+  "median": 2217,
+  "p90": 2604
+ },
+ "truncated_inputs": 0,
+ "input_tokens": 694402,
+ "mean_image_tokens": null,
+ "cost_usd": 0.8929,
+ "examples_of_errors": {
+  "company": [
+   {
+    "idx": 3,
+    "truth": "PETRON BKT LANJAN SB",
+    "got": "PETRON BKT LANJAN SB ALSERKAM ENTERPRISE",
+    "confidence": 0.95
+   },
+   {
+    "idx": 4,
+    "truth": "GERBANG ALAF RESTAURANTS SDN BHD",
+    "got": "McDonald's (Gerbang Alaf Restaurants Sdn Bhd)",
+    "confidence": 0.95
+   },
+   {
+    "idx": 5,
+    "truth": "SIN LIANHAP SDN BHD",
+    "got": "SHI LIANHAP SDN BHD",
+    "confidence": 0.95
+   }
+  ],
+  "date": [
+   {
+    "idx": 2,
+    "truth": "09/02/2018",
+    "got": "2016-02-09",
+    "confidence": 0.9
+   },
+   {
+    "idx": 22,
+    "truth": "03/03/18",
+    "got": "2018-03-05",
+    "confidence": 0.9
+   },
+   {
+    "idx": 23,
+    "truth": "11/03/2018",
+    "got": "2018-11-03",
+    "confidence": 0.95
+   }
+  ],
+  "address": [
+   {
+    "idx": 0,
+    "truth": "NO 2 & 4, JALAN BAYU 4, BANDAR SERI ALAM, B1750 MASAI, JOHOR",
+    "got": "NO 2 & 4, JALAN BAYU 4, BANDAR SERI ALAM, 81750 MASAI, JOHOR",
+    "confidence": 0.9
+   },
+   {
+    "idx": 13,
+    "truth": "SRI RAMPAI",
+    "got": "Old Town Kopitiam Sdn Bhd (716269-X) Sri Rampai Tel: 03-4148 1876",
+    "confidence": 0.9
+   },
+   {
+    "idx": 15,
+    "truth": "NO. 53, JALAN BESAR, 45600 BATANG BERJUNTAI SELANGOR DARUL EHSAN",
+    "got": "NO. 53, JALAN BESAR, 16400 BATANG SERUNTAI, SELANGOR DARUL EHSAN",
+    "confidence": 0.9
+   }
+  ],
+  "total": [
+   {
+    "idx": 3,
+    "truth": "4.90",
+    "got": 5.0,
+    "confidence": 0.95
+   },
+   {
+    "idx": 4,
+    "truth": "38.90",
+    "got": 50.0,
+    "confidence": 0.95
+   },
+   {
+    "idx": 8,
+    "truth": "8.00",
+    "got": 10.0,
+    "confidence": 0.95
+   }
+  ]
+ }
+}

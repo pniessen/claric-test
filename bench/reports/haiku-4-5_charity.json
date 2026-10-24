@@ -1,0 +1,276 @@
+{
+ "system": "haiku-4-5",
+ "dataset": "charity",
+ "images": 440,
+ "scored": 440,
+ "failed_calls": 0,
+ "fields": {
+  "charity_name": {
+   "present": 440,
+   "accuracy": 0.698,
+   "wrong": 133,
+   "missed_as_null": 0,
+   "mean_similarity": 0.911,
+   "absent": 0,
+   "null_when_absent": null
+  },
+  "charity_number": {
+   "present": 437,
+   "accuracy": 0.959,
+   "wrong": 10,
+   "missed_as_null": 8,
+   "mean_similarity": 0.975,
+   "absent": 3,
+   "null_when_absent": 1.0
+  },
+  "report_date": {
+   "present": 440,
+   "accuracy": 0.973,
+   "wrong": 11,
+   "missed_as_null": 1,
+   "mean_similarity": null,
+   "absent": 0,
+   "null_when_absent": null
+  },
+  "income_annually_in_british_pounds": {
+   "present": 434,
+   "accuracy": 0.811,
+   "wrong": 68,
+   "missed_as_null": 14,
+   "mean_similarity": null,
+   "absent": 6,
+   "null_when_absent": 0.5
+  },
+  "spending_annually_in_british_pounds": {
+   "present": 434,
+   "accuracy": 0.8,
+   "wrong": 70,
+   "missed_as_null": 17,
+   "mean_similarity": null,
+   "absent": 6,
+   "null_when_absent": 0.5
+  },
+  "address__postcode": {
+   "present": 426,
+   "accuracy": 0.859,
+   "wrong": 50,
+   "missed_as_null": 10,
+   "mean_similarity": 0.936,
+   "absent": 14,
+   "null_when_absent": 0.714
+  },
+  "address__post_town": {
+   "present": 422,
+   "accuracy": 0.912,
+   "wrong": 34,
+   "missed_as_null": 3,
+   "mean_similarity": 0.929,
+   "absent": 18,
+   "null_when_absent": 0.167
+  },
+  "address__street_line": {
+   "present": 390,
+   "accuracy": 0.362,
+   "wrong": 245,
+   "missed_as_null": 4,
+   "mean_similarity": 0.6,
+   "absent": 50,
+   "null_when_absent": 0.12
+  }
+ },
+ "calibration": [
+  {
+   "confidence": "0.00-0.50",
+   "answers": 0,
+   "share": 0.0,
+   "accuracy": null
+  },
+  {
+   "confidence": "0.50-0.90",
+   "answers": 176,
+   "share": 0.052,
+   "accuracy": 0.5
+  },
+  {
+   "confidence": "0.90-0.99",
+   "answers": 1148,
+   "share": 0.341,
+   "accuracy": 0.72
+  },
+  {
+   "confidence": "0.99-1.00",
+   "answers": 2042,
+   "share": 0.607,
+   "accuracy": 0.896
+  }
+ ],
+ "overall_accuracy": 0.816,
+ "latency_ms": {
+  "median": 2656,
+  "p90": 2892
+ },
+ "truncated_inputs": 0,
+ "input_tokens": 5885321,
+ "mean_image_tokens": null,
+ "cost_usd": 6.3239,
+ "examples_of_errors": {
+  "charity_name": [
+   {
+    "idx": 6,
+    "truth": "Sayt-Sevenoaks Area Youth Trust",
+    "got": "Sevenoaks Area Youth Trust",
+    "confidence": 0.99
+   },
+   {
+    "idx": 7,
+    "truth": "Battersea Dogs' and Cats' Home",
+    "got": "BATTERSEA DOGS' & CATS' HOME",
+    "confidence": 0.99
+   },
+   {
+    "idx": 8,
+    "truth": "Hitchin Education Foundation",
+    "got": "HITCHIN EDUCATIONAL FOUNDATION",
+    "confidence": 0.99
+   }
+  ],
+  "charity_number": [
+   {
+    "idx": 38,
+    "truth": "1011012",
+    "got": "England and Wales - 1011012",
+    "confidence": 0.99
+   },
+   {
+    "idx": 51,
+    "truth": "296943",
+    "got": "1002024044",
+    "confidence": 0.85
+   },
+   {
+    "idx": 61,
+    "truth": "1036527",
+    "got": "03652",
+    "confidence": 0.85
+   }
+  ],
+  "report_date": [
+   {
+    "idx": 181,
+    "truth": "2016-02-28",
+    "got": "2015-02-28",
+    "confidence": 0.99
+   },
+   {
+    "idx": 189,
+    "truth": "2016-08-31",
+    "got": "2012-08-31",
+    "confidence": 0.95
+   },
+   {
+    "idx": 194,
+    "truth": "2018-03-31",
+    "got": "2012-03-01",
+    "confidence": 0.5
+   }
+  ],
+  "income_annually_in_british_pounds": [
+   {
+    "idx": 14,
+    "truth": "107771.00",
+    "got": 107711,
+    "confidence": 0.99
+   },
+   {
+    "idx": 25,
+    "truth": "4418.00",
+    "got": 7317,
+    "confidence": 0.75
+   },
+   {
+    "idx": 26,
+    "truth": "418200.00",
+    "got": 359453,
+    "confidence": 0.99
+   }
+  ],
+  "spending_annually_in_british_pounds": [
+   {
+    "idx": 5,
+    "truth": "38246.00",
+    "got": 38046,
+    "confidence": 0.92
+   },
+   {
+    "idx": 19,
+    "truth": "33412000.00",
+    "got": 31479000,
+    "confidence": 0.95
+   },
+   {
+    "idx": 25,
+    "truth": "4740.00",
+    "got": 6706,
+    "confidence": 0.75
+   }
+  ],
+  "address__postcode": [
+   {
+    "idx": 1,
+    "truth": "SS0 8HX",
+    "got": "SSO 8HX",
+    "confidence": 0.85
+   },
+   {
+    "idx": 8,
+    "truth": "SG18 9N4",
+    "got": "SG18 9NR",
+    "confidence": 0.99
+   },
+   {
+    "idx": 20,
+    "truth": "N16 6XS",
+    "got": "E5 9BN",
+    "confidence": 0.99
+   }
+  ],
+  "address__post_town": [
+   {
+    "idx": 8,
+    "truth": "BROOM",
+    "got": "BIGGLESWADE",
+    "confidence": 0.99
+   },
+   {
+    "idx": 49,
+    "truth": "HEREFORD",
+    "got": "HAY-ON-WYE",
+    "confidence": 0.99
+   },
+   {
+    "idx": 55,
+    "truth": null,
+    "got": "Hedon"
+   }
+  ],
+  "address__street_line": [
+   {
+    "idx": 0,
+    "truth": null,
+    "got": "Dairymead, Wormington"
+   },
+   {
+    "idx": 1,
+    "truth": "47 SECOND AVENUE",
+    "got": "Stuart House, 47 Second Avenue",
+    "confidence": 0.99
+   },
+   {
+    "idx": 3,
+    "truth": "58 TRINITY STREET",
+    "got": "58 Trinity Street Belle Vue",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

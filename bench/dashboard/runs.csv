@@ -1,0 +1,23 @@
+system,system_label,dataset,dataset_label,dataset_note,dataset_about,dataset_order,images,failed_calls,mean_field_accuracy,null_ok,confident_accuracy,confident_share,median_ms,p90_ms,cost_usd,cost_per_1k,truncated
+clairic,Clairic,charity,Kleister Charity,Charity reports,"Charity annual reports, text",7,440,0,82.8,65.0,93.7,62.6,1819,2814,1.3857,3.15,5
+clairic,Clairic,cord,CORD,Receipt photos,"Receipt photos, image",1,100,0,91.5,78.7,99.5,54.3,526,899,0.0181,0.18,0
+haiku-4-5,Claude Haiku 4.5,charity,Kleister Charity,Charity reports,"Charity annual reports, text",7,440,0,79.7,28.9,83.3,94.8,2656,2892,6.3239,14.37,0
+haiku-4-5,Claude Haiku 4.5,cord,CORD,Receipt photos,"Receipt photos, image",1,100,0,84.2,71.2,96.2,83.4,2414,3020,0.3521,3.52,0
+haiku-4-5,Claude Haiku 4.5,nda,Kleister NDA,Legal agreements,"Non-disclosure agreements, text",6,83,0,93.8,78.7,98.0,90.5,1686,1917,0.4097,4.94,0
+haiku-4-5,Claude Haiku 4.5,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,150,0,94.6,82.6,98.0,98.6,3096,3433,1.3905,9.27,0
+haiku-4-5,Claude Haiku 4.5,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,150,0,97.5,75.6,98.1,99.7,2884,3095,1.6302,10.87,0
+haiku-4-5,Claude Haiku 4.5,sroie,SROIE,Receipt scans,"Scanned receipts, image",0,347,0,79.5,,81.4,94.9,2217,2604,0.8929,2.57,0
+haiku-5-5,Claude Haiku 5.5,charity,Kleister Charity,Charity reports,"Charity annual reports, text",7,440,0,80.6,34.0,92.1,51.2,2510,4056,0.8977,2.04,0
+haiku-5-5,Claude Haiku 5.5,cord,CORD,Receipt photos,"Receipt photos, image",1,100,0,95.9,81.4,99.6,67.2,1690,3173,0.043,0.43,0
+haiku-5-5,Claude Haiku 5.5,ma_image,Medicare plans (images),Humana 2027,"Humana Medicare Advantage Summary of Benefits, page images",5,96,0,99.2,100.0,99.9,94.6,1853,2767,0.0855,0.89,0
+haiku-5-5,Claude Haiku 5.5,ma_text,Medicare plans (text),Humana 2027,"Humana Medicare Advantage Summary of Benefits, text",4,96,0,100.0,100.0,100.0,99.5,1900,2824,0.1863,1.94,0
+haiku-5-5,Claude Haiku 5.5,nda,Kleister NDA,Legal agreements,"Non-disclosure agreements, text",6,83,0,94.5,78.7,100.0,70.2,2149,2816,0.0642,0.77,0
+haiku-5-5,Claude Haiku 5.5,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,150,0,95.1,88.5,98.7,96.5,2086,3066,0.1505,1.0,0
+haiku-5-5,Claude Haiku 5.5,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,150,0,98.4,82.6,98.7,92.0,2164,3376,0.2108,1.41,0
+haiku-5-5,Claude Haiku 5.5,sroie,SROIE,Receipt scans,"Scanned receipts, image",0,347,0,89.0,,92.1,73.2,1410,1816,0.1028,0.3,0
+clairic,Clairic,ma_image,Medicare plans (images),Humana 2027,"Humana Medicare Advantage Summary of Benefits, page images",5,96,0,97.2,50.0,100.0,89.1,2539,2907,0.0475,0.49,0
+clairic,Clairic,ma_text,Medicare plans (text),Humana 2027,"Humana Medicare Advantage Summary of Benefits, text",4,96,0,100.0,50.0,100.0,92.9,760,915,0.1133,1.18,0
+clairic,Clairic,nda,Kleister NDA,Legal agreements,"Non-disclosure agreements, text",6,83,0,88.5,88.0,98.4,75.0,666,992,0.061,0.73,0
+clairic,Clairic,sbc_image,Health plans (images),ACA plan summaries,"Summary of Benefits and Coverage, page images",3,150,0,93.8,45.9,98.6,80.4,2780,3485,0.0812,0.54,0
+clairic,Clairic,sbc_text,Health plans (text),ACA plan summaries,"Summary of Benefits and Coverage, text",2,150,0,86.0,20.7,96.9,79.6,593,835,0.111,0.74,0
+clairic,Clairic,sroie,SROIE,Receipt scans,"Scanned receipts, image",0,347,0,47.4,,95.8,38.4,678,1096,0.1178,0.34,0
